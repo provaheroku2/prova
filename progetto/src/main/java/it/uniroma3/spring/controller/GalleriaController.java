@@ -17,7 +17,7 @@ public class GalleriaController  {
 
 	@GetMapping("/galleria")
 	public String mostraQuadri(Model model) {
-		model.addAttribute(quadroservice.findAll());
+		model.addAttribute("quadri",quadroservice.findAll());
 		return "MostraQuadri";
 	}
 

@@ -5,9 +5,12 @@
 </head>
 <h1>Quadri:</h1>
 <body>
-	<c:forEach var="quadro" items="${quadri}">
-	${quadro.titolo}
-	</c:forEach>
+	 <table> 
+      <tr  th:each="quadro,iterationStatus: ${quadri}">
+      	<td th:text="${quadro.titolo}"></td>
+        
+      </tr>
+    </table>
 	
 
 </body>
