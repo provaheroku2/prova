@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Quadro {
@@ -13,10 +14,19 @@ public class Quadro {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	@NotNull
+	@Size(min=1)
 	private String titolo;
+	@NotNull
+	@Size(min=1)
 	private Integer annoRealizzazione;
+	@NotNull
+	@Size(min=1)
 	private String tecnica;
+	@NotNull
+	@Size(min=1)
 	private Double lunghezza;
+	@NotNull
+	@Size(min=1)
 	private Double altezza;
 	@ManyToOne
 	private Autore autore;

@@ -13,7 +13,7 @@
                     <span th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
                 </div>
                 <div>
-                    <span th:text="#{label.annoRealizzazione}">Anno di Realizzazione: </span>
+                    <span th:text="#{label.annoRealizzazione}">Anno di realizzazione: </span>
                     <span><input type="text" th:field="*{annoRealizzazione}" /></span>
                     <span th:if="${#fields.hasErrors('annoRealizzazione')}" th:text="#{label.number}">Error</span>
                 </div>
