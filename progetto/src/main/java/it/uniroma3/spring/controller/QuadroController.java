@@ -12,17 +12,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 import it.uniroma3.spring.model.Quadro;
+import it.uniroma3.spring.service.AutoreService;
 import it.uniroma3.spring.service.QuadroService;
 
 
 @Controller
 public class QuadroController  {
 	
-    @Autowired
+	@Autowired
     private QuadroService quadroservice; 
+    @Autowired
+    private AutoreService autoreservice;
 
     @GetMapping("/quadro")
-    public String showForm(Quadro quadro) {
+    public String showForm(Quadro quadro, Model model) {
+    	model.addAttribute("autori",autoreservice.findAll());
         return "Quadroform";
     }
 
