@@ -10,31 +10,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.spring.model.Customer;
-import it.uniroma3.spring.service.CustomerService;
+
+import it.uniroma3.spring.model.Quadro;
+import it.uniroma3.spring.service.QuadroService;
 
 
 @Controller
 public class QuadroController  {
 	
     @Autowired
-    private QuadroService customerservice; 
+    private QuadroService quadroservice; 
 
     @GetMapping("/customer")
-    public String showForm(Customer customer) {
+    public String showForm(Quadro quadro) {
         return "form";
     }
 
     @PostMapping("/customer")
-    public String checkCustomerInfo(@Valid @ModelAttribute Customer customer, 
+    public String checkCustomerInfo(@Valid @ModelAttribute Quadro quadro, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "form";
         }
         else {
-        	model.addAttribute(customer);
-            customerservice.add(customer); 
+        	model.addAttribute(quadro);
+            quadroservice.add(quadro); 
         }
         return "results";
     }

@@ -5,13 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import it.uniroma3.spring.model.Customer;
-import it.uniroma3.spring.service.CustomerService;
+import it.uniroma3.spring.service.QuadroService;
+
 
 @Controller
 public class GalleriaController  {
 	
     @Autowired
-    private CustomerService customerservice; 
+    private QuadroService quadroservice; 
 
     @GetMapping("/galleria")
     public String showForm(Customer customer) {
