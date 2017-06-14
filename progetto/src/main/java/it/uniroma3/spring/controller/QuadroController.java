@@ -8,12 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import it.uniroma3.spring.model.Quadro;
 import it.uniroma3.spring.service.AutoreService;
@@ -41,14 +41,15 @@ public class QuadroController  {
         return "Quadroform";
     }
     
-   
-    @RequestMapping(value="/eliminaquadro", method = RequestMethod.POST)
-    public String eliminaQuadro(@RequestParam("id") Long id) {
-    	   
-        Quadro quadro= quadroservice.findbyId(id);
+    @RequestMapping(value="/eliminaquadro", method=RequestMethod.POST)
+    public String dettagliQuadro(@RequestParam("id") Long id ,Model model){
+    	Quadro quadro= quadroservice.findbyId(id);
     	quadroservice.elimina(quadro);
+    	model.addAttribute("quadri", quadroservice.findAll());
     	return "EliminaQuadri";
     }
+    
+  
    
    
     @PostMapping("/quadro")
