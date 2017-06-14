@@ -11,7 +11,7 @@ import it.uniroma3.spring.service.QuadroService;
 
 @RestController
 public class QuadroRestController {
-
+//
 		@Autowired
 		QuadroService quadroService;
 		
