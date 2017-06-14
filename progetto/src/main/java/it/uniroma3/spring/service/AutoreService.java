@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.spring.model.Autore;
+import it.uniroma3.spring.model.Quadro;
 import it.uniroma3.spring.repository.AutoreRepository;
 
 
@@ -24,6 +25,10 @@ public class AutoreService {
 
 	public Autore findbyId(Long id) {
 		return this.autoreRepository.findOne(id);
+	}
+	
+	public void elimina(Autore autore){
+		autoreRepository.delete(autore);
 	}
 
 	
