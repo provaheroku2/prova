@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -17,13 +19,16 @@ public class Quadro {
 	@Size(min=1)
 	private String titolo;
 	@NotNull
+	@Max(2017)
 	private Integer annoRealizzazione;
 	@NotNull
 	@Size(min=1)
 	private String tecnica;
 	@NotNull
+	@Min(0)
 	private Double lunghezza;
 	@NotNull
+	@Min(0)
 	private Double altezza;
 	@ManyToOne
 	private Autore autore;
