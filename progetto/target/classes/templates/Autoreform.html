@@ -15,7 +15,7 @@
                 <div>
                     <span th:text="#{label.cognome}">Cognome: </span>
                     <span><input type="text" th:field="*{cognome}" /></span>
-                    <span th:if="${#fields.hasErrors('annoRealizzazione')}" th:text="#{label.mandatory}">Error</span>
+                    <span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}">Error</span>
                 </div>
                 <div>
                     <span th:text="#{label.nazionalita}">Nazionalita: </span>
