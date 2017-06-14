@@ -15,7 +15,7 @@
                 <div>
                     <span th:text="#{label.annoRealizzazione}">Anno di realizzazione: </span>
                     <span><input type="text" th:field="*{annoRealizzazione}" /></span>
-                    <span th:if="${#fields.hasErrors('annoRealizzazione')}" th:text="#{label.number}">Error</span>
+                    <span th:if="${#fields.hasErrors('annoRealizzazione')}" th:text="#{label.erroreAnno}">Error</span>
                 </div>
                 <div>
                     <span th:text="#{label.tecnica}">Tecnica: </span>

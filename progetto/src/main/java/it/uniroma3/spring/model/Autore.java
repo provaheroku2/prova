@@ -8,16 +8,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Autore {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	@NotNull
+	@Size(min=1)
 	private String nome;
+	@NotNull
+	@Size(min=1)
 	private String cognome;
+	@NotNull
+	@Size(min=1)
 	private String nazionalita;
+	@NotNull
+	@Min(0)
 	private Integer annoNascita;
+	@NotNull
+	@Max(2017)
 	private Integer annoMorte; 
 	@OneToMany(mappedBy="autore")
 	private List<Quadro> quadri;
