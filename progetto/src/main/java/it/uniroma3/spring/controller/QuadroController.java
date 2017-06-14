@@ -8,7 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 import it.uniroma3.spring.model.Quadro;
@@ -24,6 +28,7 @@ public class QuadroController  {
     @Autowired
     private AutoreService autoreservice;
 
+    
     @GetMapping("/eliminaquadro")
     public String mostraQuadri(Model model) {
 		model.addAttribute("quadri",quadroservice.findAll());
@@ -35,7 +40,17 @@ public class QuadroController  {
     	model.addAttribute("autori",autoreservice.findAll());
         return "Quadroform";
     }
-
+    
+   
+    @RequestMapping(value="/eliminaquadro", method = RequestMethod.POST)
+    public String eliminaQuadro(@RequestParam("id") Long id) {
+    	   
+        Quadro quadro= quadroservice.findbyId(id);
+    	quadroservice.elimina(quadro);
+    	return "EliminaQuadri";
+    }
+   
+   
     @PostMapping("/quadro")
     public String checkQuadroInfo(@Valid @ModelAttribute Quadro quadro, 
     									BindingResult bindingResult, Model model) {
