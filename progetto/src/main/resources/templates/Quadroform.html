@@ -1,41 +1,49 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>New Opera</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New Opera</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-    <body>
-        <form action="#" th:action="@{/quadro}" th:object="${quadro}" method="post">
-            <div>
-                <div>
-                    <span th:text="#{label.titolo}">Titolo: </span>
-                    <span><input type="text" th:field="*{titolo}" /></span>
-                    <span th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.annoRealizzazione}">Anno di realizzazione: </span>
-                    <span><input type="text" th:field="*{annoRealizzazione}" /></span>
-                    <span th:if="${#fields.hasErrors('annoRealizzazione')}" th:text="#{label.erroreAnno}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.tecnica}">Tecnica: </span>
-                    <span><input type="text" th:field="*{tecnica}" /></span>
-                    <span th:if="${#fields.hasErrors('tecnica')}" th:text="#{label.mandatory}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.lunghezza}">Lunghezza: </span>
-                    <span><input type="text" th:field="*{lunghezza}" /></span>
-                    <span th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.number}">Error</span>
-                </div>
-                <div>
-                    <span th:text="#{label.altezza}">Altezza: </span>
-                    <span><input type="text" th:field="*{altezza}" /></span>
-                    <span th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}">Error</span>
-                </div>
-                <div>
-                    <span><button type="submit">Submit</button></span>
-                </div>
-            </div>
-        </form>
-    </body>
+<body>
+	<form action="#" th:action="@{/quadro}" th:object="${quadro}"
+		method="post">
+		<div>
+			<div>
+				<span th:text="#{label.titolo}">Titolo: </span> <span><input
+					type="text" th:field="*{titolo}" /></span> <span
+					th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.annoRealizzazione}">Anno di
+					realizzazione: </span> <span><input type="text"
+					th:field="*{annoRealizzazione}" /></span> <span
+					th:if="${#fields.hasErrors('annoRealizzazione')}"
+					th:text="#{label.erroreAnno}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
+					type="text" th:field="*{tecnica}" /></span> <span
+					th:if="${#fields.hasErrors('tecnica')}"
+					th:text="#{label.mandatory}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
+					type="text" th:field="*{lunghezza}" /></span> <span
+					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.number}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.altezza}">Altezza: </span> <span><input
+					type="text" th:field="*{altezza}" /></span> <span
+					th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}">Error</span>
+			</div>
+			<select>
+				<option th:each="autore : ${autori}" th:value="${autore.id}"
+					th:text="${autore.nome}">th:text="${autore.nome}</option>
+			</select>
+			<div>
+				<span><button type="submit">Submit</button></span>
+			</div>
+		</div>
+	</form>
+</body>
 </html>
