@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Quadro</title>
+</head>
+<h1>Descrizione quadro:</h1>
+<body>
+	<div>
+    	<p th:text="'Titolo: ' + ${quadro.titolo}" />
+    </div>
+	<div>
+    	<p th:text="'Tecnica: ' + ${quadro.tecnica}" />
+    </div>
+	<div>
+    	<p th:text="'Anno: ' + ${quadro.anno}" />	
+    </div>
+    <div>
+    	<p th:text="'Altezza: ' + ${quadro.altezza}" />	
+    </div>
+    <div>
+    	<p th:text="'Lunghezza: ' + ${quadro.lunghezza}" />	
+    </div>
+	
+
+</body>
+</html>
