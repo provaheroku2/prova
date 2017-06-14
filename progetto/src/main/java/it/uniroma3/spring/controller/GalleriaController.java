@@ -16,7 +16,7 @@ public class GalleriaController  {
 
     @GetMapping("/galleria")
     public String showForm() {
-        return "form";
+        return "Quadroform";
     }
 
 }

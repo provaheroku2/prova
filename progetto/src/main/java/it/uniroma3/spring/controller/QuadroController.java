@@ -23,7 +23,7 @@ public class QuadroController  {
 
     @GetMapping("/quadro")
     public String showForm(Quadro quadro) {
-        return "form";
+        return "Quadroform";
     }
 
     @PostMapping("/quadro")
@@ -31,7 +31,7 @@ public class QuadroController  {
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
-            return "form";
+            return "Quadroform";
         }
         else {
         	model.addAttribute(quadro);
