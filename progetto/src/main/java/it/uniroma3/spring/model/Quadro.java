@@ -17,22 +17,18 @@ public class Quadro {
 	@Size(min=1)
 	private String titolo;
 	@NotNull
-	@Size(min=1)
 	private Integer annoRealizzazione;
 	@NotNull
 	@Size(min=1)
 	private String tecnica;
 	@NotNull
-	@Size(min=1)
 	private Double lunghezza;
 	@NotNull
-	@Size(min=1)
 	private Double altezza;
 	@ManyToOne
 	private Autore autore;
 	
 	protected Quadro(){
-		
 	}
 	
 	public Quadro(String titolo, Integer annoRealizzazione, String tecnica, Double lunghezza, Double altezza){
