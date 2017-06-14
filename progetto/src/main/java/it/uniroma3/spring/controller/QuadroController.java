@@ -8,12 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 
 
@@ -36,8 +36,7 @@ public class QuadroController  {
 		model.addAttribute("quadri",quadroservice.findAll());
 		return "EliminaQuadri";
 	}
-<<<<<<< HEAD
-    
+
     @GetMapping("/quadro")
     public String showForm(Quadro quadro, Model model) {
     	model.addAttribute("autori",autoreservice.findAll());
@@ -53,9 +52,7 @@ public class QuadroController  {
     }
     
   
-   
-   
-    @PostMapping("/quadro")
+   @PostMapping("/quadro")
     public String checkQuadroInfo(@Valid @ModelAttribute Quadro quadro, 
     									BindingResult bindingResult, Model model) {
     	
@@ -68,7 +65,7 @@ public class QuadroController  {
         }
         return "resultQuadro";
     }
-=======
+
 
 	@RequestMapping(value="/eliminaquadro", method = RequestMethod.POST)
 	public String eliminaQuadro(@RequestParam("id") Long id) {
@@ -78,32 +75,6 @@ public class QuadroController  {
 		return "EliminaQuadri";
 	}
 
-	@RequestMapping(value="/mostraQuadro", method=RequestMethod.GET)
-	public String dettagliQuadro(@RequestParam("id") Long id ,Model model){
-		model.addAttribute("quadro", quadroservice.findbyId(id));
-		return "resultQuadro";
-	}
+	
 
-	@GetMapping("/quadro")
-	public String showForm(Quadro quadro, Model model) {
-		model.addAttribute("autori",autoreservice.findAll());
-		return "Quadroform";
-	}
-
-
-
-	@PostMapping("/quadro")
-	public String checkQuadroInfo(@Valid @ModelAttribute Quadro quadro, 
-			BindingResult bindingResult, Model model) {
-
-		if (bindingResult.hasErrors()) {
-			return "Quadroform";
-		}
-		else {
-			model.addAttribute(quadro);
-			quadroservice.add(quadro); 
-		}
-		return "resultQuadro";
-	}
->>>>>>> branch 'master' of https://github.com/AleMart3/progetto
 }
