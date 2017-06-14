@@ -37,6 +37,6 @@ public class QuadroController  {
         	model.addAttribute(quadro);
             quadroservice.add(quadro); 
         }
-        return "results";
+        return "resultQuadro";
     }
 }
