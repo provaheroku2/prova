@@ -21,13 +21,13 @@ public class QuadroController  {
     @Autowired
     private QuadroService quadroservice; 
 
-    @GetMapping("/customer")
+    @GetMapping("/quadro")
     public String showForm(Quadro quadro) {
         return "form";
     }
 
-    @PostMapping("/customer")
-    public String checkCustomerInfo(@Valid @ModelAttribute Quadro quadro, 
+    @PostMapping("/quadro")
+    public String checkQuadroInfo(@Valid @ModelAttribute Quadro quadro, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {

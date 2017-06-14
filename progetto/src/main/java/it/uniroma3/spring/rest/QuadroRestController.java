@@ -15,7 +15,7 @@ public class QuadroRestController {
 		@Autowired
 		QuadroService quadroService;
 		
-	    @RequestMapping("/rest/customer/{id}")
+	    @RequestMapping("/rest/quadro/{id}")
 	    public Quadro getQuadro(@PathVariable Long id) {
 	        return quadroService.findbyId(id);
 	    }
