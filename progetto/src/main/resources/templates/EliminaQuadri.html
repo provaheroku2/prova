@@ -7,7 +7,7 @@
 <body>
 	 <table>
 		<tr th:each="quadro : ${quadri}">
-			<td><a th:href="@{'/quadro?id='+ ${quadro.id}}">
+			<td><a th:href="@{'/mostraQuadro?id='+ ${quadro.id}}">
 			<span th:text="${quadro.titolo}"></span></a></td>
 			
 			<td><form action="/elimina" method="post">
