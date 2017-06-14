@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.uniroma3.spring.model.Customer;
-import it.uniroma3.spring.service.CustomerService;
+import it.uniroma3.spring.model.Quadro;
+import it.uniroma3.spring.service.QuadroService;
 
 @RestController
-public class CustomerRestController {
+public class QuadroRestController {
 
 		@Autowired
-		CustomerService customerService;
+		QuadroService quadroService;
 		
 	    @RequestMapping("/rest/customer/{id}")
-	    public Customer getCustomer(@PathVariable Long id) {
-	        return customerService.findbyId(id);
+	    public Quadro getQuadro(@PathVariable Long id) {
+	        return quadroService.findbyId(id);
 	    }
 	}
