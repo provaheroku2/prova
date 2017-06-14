@@ -24,6 +24,12 @@ public class QuadroController  {
     @Autowired
     private AutoreService autoreservice;
 
+    @GetMapping("/eliminaquadro")
+    public String mostraQuadri(Model model) {
+		model.addAttribute("quadri",quadroservice.findAll());
+		return "EliminaQuadri";
+	}
+    
     @GetMapping("/quadro")
     public String showForm(Quadro quadro, Model model) {
     	model.addAttribute("autori",autoreservice.findAll());

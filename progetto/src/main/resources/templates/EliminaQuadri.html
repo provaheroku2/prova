@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Quadri</title>
+</head>
+<h1>Quadri:</h1>
+<body>
+	 <table>
+		<tr th:each="quadro : ${quadri}">
+			<td><a th:href="@{'/quadro?id='+ ${quadro.id}}">
+			<span th:text="${quadro.titolo}"></span></a></td>
+			
+			<td><form action="/elimina" method="post">
+				<input type="hidden" value="${quadro.id}" name="id"/>
+				<input type="submit" value="elimina" name="elimina"/>
+			</form></td>
+			
+			
+		</tr>
+		
+	</table>
+	
+
+</body>
+</html>
