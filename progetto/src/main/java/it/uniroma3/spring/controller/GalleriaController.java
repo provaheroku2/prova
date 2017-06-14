@@ -19,8 +19,7 @@ public class GalleriaController  {
     private QuadroService quadroservice; 
     
    
-
-    @GetMapping("/galleria")
+@GetMapping("/galleria")
     public String mostraQuadri(List<Quadro> quadri) {
         return "MostraQuadri";
     }
