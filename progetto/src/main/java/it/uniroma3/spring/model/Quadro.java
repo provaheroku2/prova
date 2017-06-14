@@ -25,9 +25,9 @@ public class Quadro {
 		
 	}
 	
-	public Quadro(String titolo, Integer anno, String tecnica, Double lunghezza, Double altezza){
+	public Quadro(String titolo, Integer annoRealizzazione, String tecnica, Double lunghezza, Double altezza){
 		this.titolo = titolo;
-		this.annoRealizzazione = anno;
+		this.annoRealizzazione = annoRealizzazione;
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.altezza = altezza;
@@ -45,10 +45,10 @@ public class Quadro {
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
-	public Integer getAnno() {
+	public Integer getAnnoRealizzazione() {
 		return annoRealizzazione;
 	}
-	public void setAnno(Integer anno) {
+	public void setAnnoRealizzazione(Integer anno) {
 		this.annoRealizzazione = anno;
 	}
 	public String getTecnica() {
