@@ -36,13 +36,18 @@
 					type="text" th:field="*{altezza}" /></span> <span
 					th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}">Error</span>
 			</div>
+			
 			<select>
-				<option th:each="autore : ${autori}" th:value="${autore.id}"
-					th:text="${autore.nome}">th:text="${autore.nome}</option>
+				<option th:each="autore : ${autori}" 
+						th:value="${autore.id}"
+						th:text="${autore.nome}"/>
 			</select>
 			<div>
 				<span><button type="submit">Submit</button></span>
 			</div>
+	
+		
+		
 		</div>
 	</form>
 </body>
