@@ -15,10 +15,10 @@ import it.uniroma3.spring.service.CustomerService;
 
 
 @Controller
-public class CustomerController  {
+public class QuadroController  {
 	
     @Autowired
-    private CustomerService customerservice; 
+    private QuadroService customerservice; 
 
     @GetMapping("/customer")
     public String showForm(Customer customer) {
