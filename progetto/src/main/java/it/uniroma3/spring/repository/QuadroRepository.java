@@ -9,10 +9,10 @@ import it.uniroma3.spring.model.Quadro;
 
 public interface QuadroRepository extends CrudRepository<Quadro, Long> {
 
-    List<Quadro> findByLastName(String lastName);
+    List<Quadro> findByTitolo(String titolo);
 
-    List<Quadro> findByFirstName(String lastName);
+    List<Quadro> findByAnnoRealizzazione(Integer annoRealizzazione);
     
-    List<Quadro> findByAge(Integer age);
+    List<Quadro> findByTecnica(String tecnica);
     
 }
