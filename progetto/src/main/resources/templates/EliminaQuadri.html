@@ -10,9 +10,9 @@
 			<td><a th:href="@{'/mostraQuadro?id='+ ${quadro.id}}">
 			<span th:text="${quadro.titolo}"></span></a></td>
 			
-			<td><form action="/eliminaquadro" method="post">
-				<input type="hidden" value="${quadro.id}" name="id"/>
-				<input type="submit" value="elimina" name="elimina"/>
+			<td><form action="/eliminaquadro" method="get">
+				<input type="hidden" th:value="${quadro.id}" name="id"/>
+				<input type="submit" th:value="elimina" name="elimina"/>
 			</form></td>
 			
 			

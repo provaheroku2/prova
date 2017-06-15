@@ -31,13 +31,13 @@ public class QuadroController  {
 	private AutoreService autoreservice;
 
 
-	@GetMapping("/eliminaquadro")
+	@GetMapping("/elimina")
 	public String mostraQuadri(Model model) {
 		model.addAttribute("quadri",quadroservice.findAll());
 		return "EliminaQuadri";
 	}
 
-	@RequestMapping(value="/eliminaquadro", method = RequestMethod.POST)
+	@RequestMapping(value="/eliminaquadro", method = RequestMethod.GET)
 	public String eliminaQuadro(@RequestParam("id") Long id, Model model) {
 		Quadro quadro= quadroservice.findbyId(id);
 		quadroservice.elimina(quadro);
