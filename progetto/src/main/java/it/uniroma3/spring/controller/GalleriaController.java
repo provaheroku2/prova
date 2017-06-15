@@ -34,7 +34,7 @@ public class GalleriaController  {
 	}
 	
 	@GetMapping("/ricercaQuadroAnno")
-	public String ricercaAnno(@RequestParam("id") Long id ,Model model){
+	public String mostraAnni(Model model){
 		Iterable<Quadro> quadri = quadroservice.findAll();
 		Set<Integer> anni= new TreeSet<>();
 		for(Quadro quadro:quadri){

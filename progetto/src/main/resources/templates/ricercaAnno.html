@@ -8,7 +8,7 @@
 </head>
 <body>
 	Anno:
-	<ul th:each="autore : ${anni}"> 
+	<ul th:each="anno : ${anni}"> 
 		<li> <a th:href="@{'/ricercaQuadroAnno?anno='+ ${anno}}"> 
 			 <span th:text="${anno}"></span></a>
 		</li>
