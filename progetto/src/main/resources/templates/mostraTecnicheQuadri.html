@@ -7,7 +7,7 @@
 <title>Ricerca</title>
 </head>
 <body>
-	Anno:
+	Tecnica:
 	<ul th:each="tecnica : ${tecniche}"> 
 		<li> <a th:href="@{'/ricercaQuadriTecnica?tecnica='+ ${tecnica}}"> 
 			 <span th:text="${tecnica}"></span></a>
