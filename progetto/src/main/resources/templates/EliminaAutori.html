@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Autori</title>
+</head>
+<h1>Autori:</h1>
+<body>
+	<table>
+		<tr th:each="autore : ${autori}">
+			<td><a th:href="@{'/mostraAutore?id='+ ${autore.id}}"> <span
+					th:text="${autore.nome}"></span></a></td>
+
+			<td><form action="/eliminaautore" method="get">
+					<input type="hidden" th:value="${autore.id}" name="id" /> <input
+						type="submit" th:value="elimina" name="elimina" />
+				</form></td>
+
+
+		</tr>
+
+	</table>
+	<p>
+		<a href="/pannelloDiControllo.html">Indietro</a>
+	</p>
+	<p>
+		<a href="/">Torna alla home</a>
+	</p>
+</body>
+</html>

@@ -5,21 +5,26 @@
 </head>
 <h1>Quadri:</h1>
 <body>
-	 <table>
+	<table>
 		<tr th:each="quadro : ${quadri}">
-			<td><a th:href="@{'/mostraQuadro?id='+ ${quadro.id}}">
-			<span th:text="${quadro.titolo}"></span></a></td>
-			
+			<td><a th:href="@{'/mostraQuadro?id='+ ${quadro.id}}"> <span
+					th:text="${quadro.titolo}"></span></a></td>
+
 			<td><form action="/eliminaquadro" method="get">
-				<input type="hidden" th:value="${quadro.id}" name="id"/>
-				<input type="submit" th:value="elimina" name="elimina"/>
-			</form></td>
-			
-			
+					<input type="hidden" th:value="${quadro.id}" name="id" /> <input
+						type="submit" th:value="elimina" name="elimina" />
+				</form></td>
+
+
 		</tr>
-		
+
 	</table>
-	
+	<p>
+		<a href="/pannelloDiControllo.html">Indietro</a>
+	</p>
+	<p>
+		<a href="/">Torna alla home</a>
+	</p>
 
 </body>
 </html>
