@@ -31,7 +31,7 @@ public class QuadroController  {
 	private AutoreService autoreservice;
 
 
-	@GetMapping("/elimina")
+	@GetMapping("/gestioneEliminaQuadro")
 	public String mostraQuadri(Model model) {
 		model.addAttribute("quadri",quadroservice.findAll());
 		return "EliminaQuadri";
