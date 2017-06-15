@@ -1,4 +1,5 @@
 package it.uniroma3.spring.controller;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -43,6 +44,15 @@ public class GalleriaController  {
 		return "mostraAnniDeiQuadri";
 		
 	}
+	
+	@GetMapping("/ricercaQuadriAnno")
+    public String ricercaAnno(@RequestParam("anno") Integer anno, Model model){
+        List<Quadro> quadri = quadroservice.findByAnnoRealizzazione(anno);
+        model.addAttribute("quadri",quadri);
+        return "quadriPerAnno";
+    }
+	
+	
 	
 	@RequestMapping(value="/galleriaAutore", method=RequestMethod.GET)
     public String dettagliAutore(@RequestParam("id") Long id ,Model model){

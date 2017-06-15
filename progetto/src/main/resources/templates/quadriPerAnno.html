@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Quadri per Anno</title>
+</head>
+<body>
+	Quadri:
+    <ul th:each="quadro : ${quadri}"> 
+        <li> <a th:href="@{'galleriaQuadro?id='+ ${quadro.id}}"> 
+             <span th:text="${quadro.titolo}"></span></a>
+        </li>
+    </ul>
+
+
+</body>
+</html>
