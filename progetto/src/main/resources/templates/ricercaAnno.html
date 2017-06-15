@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Ricerca</title>
+</head>
+<body>
+	Anno:
+	<ul th:each="autore : ${anni}"> 
+		<li> <a th:href="@{'/ricercaQuadroAnno?anno='+ ${anno}}"> 
+			 <span th:text="${anno}"></span></a>
+		</li>
+	</ul>
+		
+	
+</body>
+</html>
