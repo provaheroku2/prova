@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.uniroma3.spring.model.Autore;
 import it.uniroma3.spring.model.Quadro;
 import it.uniroma3.spring.service.AutoreService;
 import it.uniroma3.spring.service.QuadroService;
@@ -27,8 +28,9 @@ public class GalleriaController  {
 	private AutoreService autoreservice; 
 
 	@GetMapping("/ricercaQuadriAutore")
-    public String ricercaQuadriPerAutore(@RequestParam("cognome") String cognome, Model model){
-    		List<Quadro> quadri = quadroservice.findByAutore(cognome);
+    public String ricercaQuadriPerAutore(@RequestParam("autoreId") Long id, Model model){
+    		Autore autore = autoreservice.findbyId(id);
+		    List<Quadro> quadri = autore.getQuadri();
     		model.addAttribute("quadri",quadri);
     		return "quadriFiltrati";
    }
@@ -42,7 +44,7 @@ public class GalleriaController  {
 	@GetMapping("/mostraAutori")
 	public String mostraAutori(Model model) {
 		model.addAttribute("autori",autoreservice.findAll());
-		return "MostraAutoriQuadri";
+		return "mostraAutoriQuadri";
 	}
 	
 	@GetMapping("/mostraTecniche")

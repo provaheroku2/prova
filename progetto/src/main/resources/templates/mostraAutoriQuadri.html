@@ -9,7 +9,7 @@
 <body>
 	Autore:
 	<ul th:each="autore : ${autori}"> 
-		<li> <a th:href="@{'/ricercaQuadriAutore?cognome='+ ${autore.cognome}}"> 
+		<li> <a th:href="@{'/ricercaQuadriAutore?autoreId='+ ${autore.id}}"> 
 			 <span th:text="${autore.cognome}"></span></a>
 		</li>
 	</ul>
