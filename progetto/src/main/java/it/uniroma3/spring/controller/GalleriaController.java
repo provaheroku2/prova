@@ -1,5 +1,4 @@
 package it.uniroma3.spring.controller;
-import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -33,7 +32,7 @@ public class GalleriaController  {
 		return "MostraAutori";
 	}
 	
-	@GetMapping("/ricercaQuadroAnno")
+	@GetMapping("/mostraAnni")
 	public String mostraAnni(Model model){
 		Iterable<Quadro> quadri = quadroservice.findAll();
 		Set<Integer> anni= new TreeSet<>();
@@ -41,7 +40,7 @@ public class GalleriaController  {
 			anni.add(quadro.getAnnoRealizzazione());
 		}
 		model.addAttribute("anni", anni);
-		return "ricercaAnno";
+		return "mostraAnniDeiQuadri";
 		
 	}
 	
