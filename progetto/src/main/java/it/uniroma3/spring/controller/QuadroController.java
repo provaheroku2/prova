@@ -60,13 +60,14 @@ public class QuadroController  {
 
 	@PostMapping("/quadro")
 	public String checkQuadroInfo(@Valid @ModelAttribute Quadro quadro, 
-			BindingResult bindingResult, Model model) {
+			BindingResult bindingResult, Model model, @RequestParam("autoreId") Long id ) {
 
 		if (bindingResult.hasErrors()) {
 			return "Quadroform";
 		}
 		else {
 			model.addAttribute(quadro);
+			quadro.setAutore(autoreservice.findbyId(id));
 			quadroservice.add(quadro); 
 		}
 		return "resultQuadro";
