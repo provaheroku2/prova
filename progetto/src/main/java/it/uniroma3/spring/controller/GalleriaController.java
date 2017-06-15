@@ -33,6 +33,25 @@ public class GalleriaController  {
 		return "MostraAutori";
 	}
 	
+	@GetMapping("/mostraTecniche")
+	public String mostraTecniche(Model model){
+		Iterable<Quadro> quadri = quadroservice.findAll();
+		Set<String> tecniche= new TreeSet<>();
+		for(Quadro quadro:quadri){
+			tecniche.add(quadro.getTecnica());
+		}
+		model.addAttribute("tecniche", tecniche);
+		return "mostraTecnicheQuadri";
+		
+	}
+	
+	@GetMapping("/ricercaQuadriTecnica")
+    public String ricercaTecnica(@RequestParam("tecnica") String tecnica, Model model){
+        List<Quadro> quadri = quadroservice.findByTecnica(tecnica);
+        model.addAttribute("quadri",quadri);
+        return "quadriFiltrati";
+    }
+	
 	@GetMapping("/mostraAnni")
 	public String mostraAnni(Model model){
 		Iterable<Quadro> quadri = quadroservice.findAll();
@@ -49,7 +68,7 @@ public class GalleriaController  {
     public String ricercaAnno(@RequestParam("anno") Integer anno, Model model){
         List<Quadro> quadri = quadroservice.findByAnnoRealizzazione(anno);
         model.addAttribute("quadri",quadri);
-        return "quadriPerAnno";
+        return "quadriFiltrati";
     }
 	
 	

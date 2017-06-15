@@ -35,6 +35,9 @@ public class QuadroService {
 	public List<Quadro> findByAnnoRealizzazione(Integer anno){
 		return this.quadroRepository.findByAnnoRealizzazione(anno);
 	}
+	public List<Quadro> findByTecnica(String tecnica){
+		return this.quadroRepository.findByTecnica(tecnica);
+	}
 	
 
 }
