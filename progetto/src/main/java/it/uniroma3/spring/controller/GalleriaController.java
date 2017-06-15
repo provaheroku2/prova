@@ -26,11 +26,23 @@ public class GalleriaController  {
 	@Autowired
 	private AutoreService autoreservice; 
 
+	@GetMapping("/ricercaQuadriAutore")
+    public String ricercaQuadriPerAutore(@RequestParam("cognome") String cognome, Model model){
+    		List<Quadro> quadri = quadroservice.findByAutore(cognome);
+    		model.addAttribute("quadri",quadri);
+    		return "quadriFiltrati";
+   }
 	
 	@GetMapping("/galleriaautori")
-	public String mostraAutori(Model model) {
+	public String galleriaAutori(Model model) {
 		model.addAttribute("autori",autoreservice.findAll());
 		return "MostraAutori";
+	}
+	
+	@GetMapping("/mostraAutori")
+	public String mostraAutori(Model model) {
+		model.addAttribute("autori",autoreservice.findAll());
+		return "MostraAutoriQuadri";
 	}
 	
 	@GetMapping("/mostraTecniche")
@@ -44,6 +56,7 @@ public class GalleriaController  {
 		return "mostraTecnicheQuadri";
 		
 	}
+
 	
 	@GetMapping("/ricercaQuadriTecnica")
     public String ricercaTecnica(@RequestParam("tecnica") String tecnica, Model model){

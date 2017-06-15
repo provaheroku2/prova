@@ -8,7 +8,7 @@
 	<table>
 		<tr th:each="autore : ${autori}">
 			<td><a th:href="@{'/galleriaAutore?id='+ ${autore.id}}"> <span
-					th:text="${autore.nome}"></span></a></td>
+					th:text="${autore.cognome}"></span></a></td>
 		</tr>
 
 	</table>

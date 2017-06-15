@@ -39,5 +39,8 @@ public class QuadroService {
 		return this.quadroRepository.findByTecnica(tecnica);
 	}
 	
+	public List<Quadro> findByAutore(String cognome){
+		return this.quadroRepository.findByAutore(cognome);
+	}
 
 }
