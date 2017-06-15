@@ -3,6 +3,7 @@ package it.uniroma3.spring.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Autore {
 	@NotNull
 	@Max(2017)
 	private Integer annoMorte; 
-	@OneToMany(mappedBy="autore")
+	@OneToMany(mappedBy="autore", cascade = CascadeType.REMOVE)
 	private List<Quadro> quadri;
 
 	
