@@ -41,7 +41,7 @@ public class QuadroController  {
 	public String eliminaQuadro(@RequestParam("id") Long id, Model model) {
 		Quadro quadro= quadroservice.findbyId(id);
 		quadroservice.elimina(quadro);
-		model.addAttribute(quadroservice.findAll());
+		model.addAttribute("quadri",quadroservice.findAll());
 		return "EliminaQuadri";
 	}
 
