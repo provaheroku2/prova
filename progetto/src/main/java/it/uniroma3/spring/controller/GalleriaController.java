@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.uniroma3.spring.service.AutoreService;
 import it.uniroma3.spring.service.QuadroService;
 
 
@@ -17,10 +18,23 @@ public class GalleriaController  {
 
 	@Autowired
 	private QuadroService quadroservice; 
+	@Autowired
+	private AutoreService autoreservice; 
 
+	
+	@GetMapping("/galleriaautori")
+	public String mostraAutori(Model model) {
+		model.addAttribute("autori",autoreservice.findAll());
+		return "MostraAutori";
+	}
+	
+	@RequestMapping(value="/galleriaAutore", method=RequestMethod.GET)
+    public String dettagliAutore(@RequestParam("id") Long id ,Model model){
+		model.addAttribute("autore", autoreservice.findbyId(id));
+		return "resultAutore";
+	}
 
-
-	@GetMapping("/galleriacompleta")
+	@GetMapping("/galleriaquadri")
 	public String mostraQuadri(Model model) {
 		model.addAttribute("quadri",quadroservice.findAll());
 		return "MostraQuadri";
