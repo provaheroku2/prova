@@ -20,9 +20,10 @@
     <div>
     	<p th:text="'Lunghezza: ' + ${quadro.lunghezza}" />	
     </div>
-    <div>
-    	<p th:text="'Autore: ' + ${quadro.autore.nome}" />	
-    </div>
+    <div>Autore:
+		<a th:href="@{'/galleriaAutore?id='+ ${quadro.autore.id}}"> <span
+			th:text="${quadro.autore.nome}"></span></a>
+	</div>
 	
 	<p><a href="/">Torna alla home</a></p>
 
