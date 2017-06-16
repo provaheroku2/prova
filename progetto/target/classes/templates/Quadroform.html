@@ -2,56 +2,100 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>New Opera</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body>
+	
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+		</ul>
+      
+    </div>
+  </div>
+</nav>
+	
+	
+	
+	
+	
+	<div class="container">
+        <h2>Inserisci un nuovo quadro</h2>
+	
 	<form action="#" th:action="@{/quadro}" th:object="${quadro}"
 		method="post">
 		<div>
-			<div>
-				<span th:text="#{label.titolo}">Titolo: </span> <span><input
-					type="text" th:field="*{titolo}" /></span> <span
+			<div class="form-group">
+				<span th:text="#{label.titolo}"> Titolo: </span> <span><input
+					type="text" class="form-control" placeholder="titolo" th:field="*{titolo}" /></span> <span
 					th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
 			</div>
-			<div>
+			
+			<div class="form-group">
 				<span th:text="#{label.annoRealizzazione}">Anno di
 					realizzazione: </span> <span><input type="text"
-					th:field="*{annoRealizzazione}" /></span> <span
+					th:field="*{annoRealizzazione}"
+					class="form-control" placeholder="anno di realizzazione" />
+				</span> 
+					<span
 					th:if="${#fields.hasErrors('annoRealizzazione')}"
 					th:text="#{label.erroreAnno}">Error</span>
 			</div>
-			<div>
+			
+			<div class="form-group">
 				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
-					type="text" th:field="*{tecnica}" /></span> <span
+					type="text" th:field="*{tecnica}" 
+					class="form-control" placeholder="tecnica" /></span> <span
 					th:if="${#fields.hasErrors('tecnica')}"
 					th:text="#{label.mandatory}">Error</span>
 			</div>
-			<div>
+			
+			<div class="form-group">
 				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
-					type="text" th:field="*{lunghezza}" /></span> <span
+					type="text" th:field="*{lunghezza}"
+					class="form-control" placeholder="lunghezza" /></span> <span
 					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.number}">Error</span>
 			</div>
-			<div>
+			
+			<div class="form-group">
 				<span th:text="#{label.altezza}">Altezza: </span> <span><input
-					type="text" th:field="*{altezza}" /></span> <span
+					type="text" th:field="*{altezza}" 
+					class="form-control" placeholder="altezza" /></span> <span
 					th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}">Error</span>
 			</div>
-			Autore:
-			<select name = "autoreId">
+			
+			<div class="form-group">
+      			<label for="sel1">Select list (select one):</label>
+      			<select class="form-control" name = "autoreId">
+	
 				<option th:each="autore : ${autori}" 
 						th:value="${autore.id}"
-						th:text="${autore.nome}"/>
-			</select>
+						th:text="${autore.cognome} +' '+ ${autore.nome} "/>
+				</select>
+			</div>
 			
 			<div>
-				<span><button type="submit">Submit</button></span>
+				<button type="submit" class="btn btn-default">Submit</button>
 			</div>
 	
-		
+			
 		
 		</div>
 	</form>
-	 <p><a href="/pannelloDiControllo.html">Indietro</a></p>
-	<p><a href="/">Torna alla home</a></p>
+	
+	
+	
+	</div>
 </body>
 </html>
