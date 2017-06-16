@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Ricerca</title>
+</head>
+<body>
+	Cognome:
+	<ul th:each="cognome : ${cognomi}"> 
+		<li> <a th:href="@{'/ricercaAutoriCognome?cognome='+ ${cognome}}"> 
+			 <span th:text="${cognome}"></span></a>
+		</li>
+	</ul>
+	<p><a href="/galleriaRicercaAutori.html">Metodi di ricerca</a></p>
+</body>
+</html>

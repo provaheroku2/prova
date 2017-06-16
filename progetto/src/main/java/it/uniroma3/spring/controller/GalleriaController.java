@@ -26,6 +26,44 @@ public class GalleriaController  {
 	private QuadroService quadroservice; 
 	@Autowired
 	private AutoreService autoreservice; 
+	
+	
+	@GetMapping("mostraCognomi")
+	public String mostraCognomi(Model model){
+		Iterable<Autore> autori = autoreservice.findAll();
+		Set<String> cognomi = new TreeSet<>();
+		for(Autore autore:autori){
+			cognomi.add(autore.getCognome());
+		}
+		model.addAttribute("cognomi", cognomi);
+		return "mostraCognomiAutori";
+		
+	}
+	@GetMapping("/ricercaAutoriCognome")
+	public String ricercaAutoriPerCognome(@RequestParam("cognome") String cognome, Model model){
+		List<Autore> autori = autoreservice.fingByCognome(cognome);
+		model.addAttribute("autori", autori);
+		return "autoriFiltrati";
+	}
+	
+	@GetMapping("mostraNazionalita")
+	public String mostraNazionalita(Model model){
+		Iterable<Autore> autori = autoreservice.findAll();
+		Set<String> nazionalita = new TreeSet<>();
+		for(Autore autore:autori){
+			nazionalita.add(autore.getNazionalita());
+		}
+		model.addAttribute("nazionalita", nazionalita);
+		return "mostraNazionalitaAutori";
+		
+	}
+	
+	@GetMapping("/ricercaAutoriNazionalita")
+	public String ricercaAutoriPerNazionalita(@RequestParam("nazionalita") String nazionalita, Model model){
+		List<Autore> autori = autoreservice.fingByNazionalita(nazionalita);
+		model.addAttribute("autori", autori);
+		return "autoriFiltrati";
+	}
 
 	@GetMapping("/ricercaQuadriAutore")
     public String ricercaQuadriPerAutore(@RequestParam("autoreId") Long id, Model model){
