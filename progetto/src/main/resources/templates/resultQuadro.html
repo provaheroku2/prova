@@ -1,31 +1,40 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Quadro</title>
+ <title>Quadro</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
-<h1>Descrizione quadro:</h1>
+
 <body>
-	<div>
-    	<p th:text="'Titolo: ' + ${quadro.titolo}" />
-    </div>
-	<div>
-    	<p th:text="'Tecnica: ' + ${quadro.tecnica}" />
-    </div>
-	<div>
-    	<p th:text="'Anno di realizzazione: ' + ${quadro.annoRealizzazione}" />	
-    </div>
-    <div>
-    	<p th:text="'Altezza: ' + ${quadro.altezza}" />	
-    </div>
-    <div>
-    	<p th:text="'Lunghezza: ' + ${quadro.lunghezza}" />	
-    </div>
-    <div>Autore:
+	
+	<div class="container"> 
+	<h1 th:text=" ${quadro.titolo}"></h1>
+    
+   	<ul class="list-group">
+	
+	<li class="list-group-item" th:text="'Tecnica: ' + ${quadro.tecnica}"/>
+	
+	
+    <li class="list-group-item" th:text="'Anno di realizzazione: ' + ${quadro.annoRealizzazione}" />	
+   
+   
+   	<li class="list-group-item" th:text="'Altezza: ' + ${quadro.altezza}" />	
+    
+    <li class="list-group-item" th:text="'Lunghezza: ' + ${quadro.lunghezza}" />	
+
+   
+    <li class="list-group-item"> Autore:
 		<a th:href="@{'/galleriaAutore?id='+ ${quadro.autore.id}}"> <span
 			th:text="${quadro.autore.nome}"></span></a>
+	</li>
+	
+	</ul>
+	<p><a href="/">Torna alla home</a></p>
 	</div>
 	
-	<p><a href="/">Torna alla home</a></p>
-
+ 
+	
+	
 </body>
 </html>
