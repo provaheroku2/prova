@@ -1,39 +1,56 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html>
 <head>
     <title>Galleria d'arte</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative; 
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: lightgrey}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: white;}
+  </style>
 </head>
-<body>     
-     <div class="container-fluid" style="background-color:orange;color:black;height:150px;">
-  <h1>Galleria Roma Tre</h1>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-  <p>Seleziona la modalità con cui vuoi esplorare la galleria.</p>
-  <p>Scorri la pagina per vedere eventuali comunicazioni.</p>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+          <li><a href="#section1">Visualizza tutti i quadri</a></li>
+          <li><a href="#section2">Visualizza tutti gli autori</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <h1 style="color:grey">Seleziona il metodo di visualizzazione dei quadri</h1>
+  <p><a href="/galleriaquadri" style="color:orange; font-size:20px">Visualizza tutti i quadri nella galleria</a></p>
+  <p><a href="/mostraAnni" style="color:orange; font-size:20px">ricerca per anno </a></p>
+  <p><a href="/mostraTecniche" style="color:orange; font-size:20px">ricerca per tecnica </a></p>
+  <p><a href="/mostraAutori" style="color:orange; font-size:20px">ricerca per autore </a></p>
 </div>
-
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-  <ul class="nav navbar-nav">
-    <li class="active"><a href="/">Home</a></li>
-    <li><a href="/galleriaquadri">Visualizza i quadri nella galleria</a></li>
-    <li><a href="/galleriaRicercaQuadri.html">Ricerca quadri</a></li>
-    <li><a href="/galleriaautori">Visualizza gli autori</a></li>
-    <li><a href="/galleriaRicercaAutori.html">Ricerca autori</a></li>
-  </ul>
-</nav>
-
-<h1 style="padding-left:10px; color:black">Comunicazioni ed eventi:</h1>
-<div class="container-fluid" style="height:100px">
-  <h1>Il sito della galleria è ultimato</h1>
-  <h1>A breve nuove opere saranno esposte nella galleria.</h1>
-  <h1>Restyling grafico del sito in corso.</h1>
-  <h1>Sito creato per il progetto 2017 SIW Roma Tre.</h1>
-  
-  
-  
+<div id="section2" class="container-fluid">
+  <h1 style="color:grey">Seleziona il metodo di visualizzazione degli autori</h1>
+  <p><a href="/galleriaautori" style="color:orange; font-size:20px">Visualizza tutti gli autori nella galleria</a></p>
+  <p><a href="/mostraNazionalita" style="color:orange; font-size:20px">ricerca per nazionalità </a></p>
+  <p><a href="/mostraCognomi" style="color:orange; font-size:20px">ricerca per cognome</a></p>
 </div>
 </body>
 </html>
