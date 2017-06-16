@@ -2,42 +2,69 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Nuovo Autore</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
     <body>
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+		</ul>
+      
+    </div>
+  </div>
+</nav>
+        
+        
+        <div class="container">
+        <h2>Inserisci un nuovo autore</h2>
+       
         <form action="#" th:action="@{/autore}" th:object="${autore}" method="post">
             <div>
-                <div>
+               	<div class="form-group">
                     <span th:text="#{label.nome}">Nome: </span>
-                    <span><input type="text" th:field="*{nome}" /></span>
+                    <span><input type="text" class="form-control" placeholder="nome" th:field="*{nome}" /></span>
                     <span th:if="${#fields.hasErrors('nome')}" th:text="#{label.mandatory}">Error</span>
                 </div>
-                <div>
+                <div class="form-group">
                     <span th:text="#{label.cognome}">Cognome: </span>
-                    <span><input type="text" th:field="*{cognome}" /></span>
+                    <span><input type="text" class="form-control" placeholder="cognome" th:field="*{cognome}" /></span>
                     <span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}">Error</span>
                 </div>
-                <div>
+                <div class="form-group">
                     <span th:text="#{label.nazionalita}">Nazionalita: </span>
-                    <span><input type="text" th:field="*{nazionalita}" /></span>
+                    <span><input type="text" class="form-control" placeholder="nazionalita'" th:field="*{nazionalita}" /></span>
                     <span th:if="${#fields.hasErrors('nazionalita')}" th:text="#{label.mandatory}">Error</span>
                 </div>
-                <div>
+                <div class="form-group">
                     <span th:text="#{label.annoNascita}">Anno di nascita: </span>
-                    <span><input type="text" th:field="*{annoNascita}" /></span>
+                    <span><input type="text" class="form-control" placeholder="anno di nascita" th:field="*{annoNascita}" /></span>
                     <span th:if="${#fields.hasErrors('annoNascita')}" th:text="#{label.erroreAnno}">Error</span>
                 </div>
-                <div>
+                <div class="form-group">
                     <span th:text="#{label.annoMorte}">Anno di morte: </span>
-                    <span><input type="text" th:field="*{annoMorte}" /></span>
+                    <span><input type="text" class="form-control" placeholder="anno di morte" th:field="*{annoMorte}" /></span>
                     <span th:if="${#fields.hasErrors('annoMorte')}" th:text="#{label.erroreAnno}">Error</span>
                 </div>
-                <div>
-                    <span><button type="submit">Submit</button></span>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Submit</button>
                 </div>
+                
             </div>
         </form>
-        <p><a href="/pannelloDiControllo.html">Indietro</a></p>
-        <p><a href="/">Torna alla home</a></p>
+        
+        </div>
     </body>
 </html>
