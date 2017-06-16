@@ -2,26 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Autore</title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
-<h1>Descrizione autore:</h1>
 <body>
-	<div>
-    	<p th:text="'Nome: ' + ${autore.nome}" />
-    </div>
-	<div>
-    	<p th:text="'Cognome: ' + ${autore.cognome}" />
-    </div>
-	<div>
-    	<p th:text="'Nazionalita: ' + ${autore.nazionalita}" />	
-    </div>
-    <div>
-    	<p th:text="'Anno di nascita: ' + ${autore.annoNascita}" />	
-    </div>
-    <div>
-    	<p th:text="'Anno di morte: ' + ${autore.annoMorte}" />	
-    </div>
 	
-	<p><a href="/">Torna alla home</a></p>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/index.html">Home</a></li>
+		</ul>
+      
+    </div>
+  </div>
+</nav>
+	
+	
+	
+	<div class="container"> 
+    	<h1 th:text="${autore.cognome} +' '+ ${autore.nome}" ></h1>
+   
+	<ul class="list-group">
+    
+  		<li class="list-group-item" th:text="'Nazionalita: ' + ${autore.nazionalita}" />	
+   
+  
+    	<li class="list-group-item" th:text="'Anno di nascita: ' + ${autore.annoNascita}" />	
+ 
+    
+    	<li class="list-group-item" th:text="'Anno di morte: ' + ${autore.annoMorte}" />	
+   
+	
+	</ul>
+	</div>
 
 </body>
 </html>

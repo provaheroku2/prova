@@ -32,24 +32,24 @@
     
    	<ul class="list-group">
 	
-	<li class="list-group-item" th:text="'Tecnica: ' + ${quadro.tecnica}"/>
+		<li class="list-group-item" th:text="'Tecnica: ' + ${quadro.tecnica}"/>
 	
 	
-    <li class="list-group-item" th:text="'Anno di realizzazione: ' + ${quadro.annoRealizzazione}" />	
+   		 <li class="list-group-item" th:text="'Anno di realizzazione: ' + ${quadro.annoRealizzazione}" />	
    
    
-   	<li class="list-group-item" th:text="'Altezza: ' + ${quadro.altezza}" />	
+   		<li class="list-group-item" th:text="'Altezza: ' + ${quadro.altezza}" />	
     
-    <li class="list-group-item" th:text="'Lunghezza: ' + ${quadro.lunghezza}" />	
+   		 <li class="list-group-item" th:text="'Lunghezza: ' + ${quadro.lunghezza}" />	
 
    
-    <li class="list-group-item"> Autore:
-		<a th:href="@{'/galleriaAutore?id='+ ${quadro.autore.id}}"> <span
-			th:text="${quadro.autore.nome}"></span></a>
-	</li>
+    	<li class="list-group-item"> Autore:
+			<a th:href="@{'/galleriaAutore?id='+ ${quadro.autore.id}}"> 
+			<span th:text="${quadro.autore.nome}"></span></a>
+		</li>
 	
 	</ul>
-	<p><a href="/">Torna alla home</a></p>
+	
 	</div>
 	
  
