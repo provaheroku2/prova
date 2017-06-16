@@ -3,12 +3,53 @@
 <head>
 <title>Pannello di controllo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+  body {
+      position: relative; 
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: white}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: black;}
+  </style>
 </head>
-<body>
-    <p><a href="/quadro">Inserisci un nuovo quadro</a></p>
-    <p><a href="/gestioneEliminaQuadro">Elimina quadro esistente </a></p>
-    <p><a href="/autore">Inserisci un nuovo autore </a></p>
-    <p><a href="/gestioneEliminaAutore">Elimina autore esistente </a></p>
-    <p><a href="/">Torna alla home</a></p>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+          <li><a href="#section1">Gestione quadri</a></li>
+          <li><a href="#section2">Gestione autori</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <h1 style="color:grey">Gestione delle opere</h1>
+  <p><a href="/quadro" style="color:orange; font-size:20px">Inserisci un nuovo quadro</a></p>
+  <p><a href="/gestioneEliminaQuadro" style="color:orange; font-size:20px">Elimina quadro esistente</a></p>
+  <p><a href="/metodiDiVisualizzazione.html#section1" style="color:orange; font-size:20px">Visualizza o cerca quadro esistente</a></p>
+</div>
+<div id="section2" class="container-fluid">
+  <h1 style="color:grey">Gestione degli autori</h1>
+  <p><a href="/autore" style="color:orange; font-size:20px">Inserisci un nuovo autore </a></p>
+  <p><a href="/gestioneEliminaAutore" style="color:orange; font-size:20px">Elimina autore esistente</a></p>
+  <p><a href="/metodiDiVisualizzazione.html#section2" style="color:orange; font-size:20px">Visualizza o cerca autore esistente</a></p>
+</div>
 </body>
 </html>
