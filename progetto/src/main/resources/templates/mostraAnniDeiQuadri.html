@@ -3,16 +3,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Ricerca</title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-	Anno:
-	<ul th:each="anno : ${anni}"> 
-		<li> <a th:href="@{'/ricercaQuadriAnno?anno='+ ${anno}}"> 
-			 <span th:text="${anno}"></span></a>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      </ul>
+      
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menù <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/metodiDiVisualizzazione.html">Metodi di ricerca</a></li>
+          <li><a href="/galleriaquadri">Vedi tutti i quadri</a></li>
+          <li><a href="/galleriaautori">Vedi tutti gli autori</a></li>
+       </ul>
+       </li>       
+    </ul>
+  </div>
+</nav>
+
+<h1 style="padding-left:20px">Anno:</h1>
+<h6 style="padding-left:20px">Clicca sull'anno di interesse</h6>
+	<ul class="list-group" style="padding-left:180px; padding-right:1050px" th:each="anno : ${anni}"> 
+		<li class="list-group-item" style="background-color:white"> <a th:href="@{'/ricercaQuadriAnno?anno='+ ${anno}}" style="color:orange"> 
+			 <span th:text="${anno}"></span></a>	
 		</li>
 	</ul>
-	<p><a href="/galleriaRicercaQuadri.html">Metodi di ricerca</a></p>
+	
 </body>
 </html>
