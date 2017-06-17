@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:grey">
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -34,13 +34,23 @@
   </div>
 </nav>  
 
-<h1 style="padding-left:20px">Anno:</h1>
-<h6 style="padding-left:20px">Clicca sull'anno di interesse</h6>
-	<ul class="list-group" style="padding-left:180px; padding-right:1050px" th:each="anno : ${anni}"> 
-		<li class="list-group-item" style="background-color:white"> <a th:href="@{'/ricercaQuadriAnno?anno='+ ${anno}}" style="color:orange"> 
-			 <span th:text="${anno}"></span></a>	
-		</li>
-	</ul>
-	
+<div class="container" >
+  <div class="jumbotron">
+    <h1>Anno di realizzazione</h1>      
+    <p>Clicca sull'anno di interesse</p>
+ 	</div>
+
+
+ 	<ul class="list-group" style="padding-left:65px; padding-right:65px" th:each="anno : ${anni}">
+ 	<li class="list-group-item" style="background-color:black">
+   <a th:href="@{'/ricercaQuadriAnno?anno='+ ${anno}}" style="color:orange"> 
+			 <span th:text="${anno}"></span></a>
+			 
+    </li>
+    </ul>
+ 
+</div>
 </body>
+
+
 </html>
