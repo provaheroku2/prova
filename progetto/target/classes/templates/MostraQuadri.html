@@ -54,7 +54,11 @@
 			<td th:text="${quadro.tecnica}" style="font-weight:bold"/> 
 			<td th:text="${quadro.lunghezza}" style="font-weight:bold"/> 
 			<td th:text="${quadro.altezza}" style="font-weight:bold"/> 
-			<td th:text="${quadro.autore.cognome}" style="font-weight:bold"/> 
+			<td>
+			<a th:href="@{'/ricercaAutoreId?autoreId='+ ${quadro.autore.id}}" style="color:orange">
+			<span th:text="${quadro.autore.cognome}" style="font-weight:bold"></span>
+			</a>
+			</td>
 		</tr>
 	 </tbody>
 	</table>
