@@ -29,10 +29,13 @@ public class GalleriaController  {
 	private AutoreService autoreservice; 
 
 
+
 	@RequestMapping("/mostraGalleria")
 	public String mostraGalleria(){
 		return "/metodiDiVisualizzazione";
 	}
+
+
 
 	@PostMapping("/ricercaAutoriCognome")
 	public String ricercaAutoriPerCognome(@RequestParam("cognome") String cognome, Model model){
@@ -41,7 +44,9 @@ public class GalleriaController  {
 		return "MostraAutori";
 	}
 
-	@GetMapping("mostraNazionalita")
+
+
+	@GetMapping("/mostraNazionalita")
 	public String mostraNazionalita(Model model){
 		Iterable<Autore> autori = autoreservice.findAll();
 		Set<String> nazionalita = new TreeSet<>();
