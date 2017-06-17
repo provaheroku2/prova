@@ -28,7 +28,7 @@ public class GalleriaController  {
 	private AutoreService autoreservice; 
 	
 	
-	@GetMapping("mostraCognomi")
+	@GetMapping("/mostraCognomi")
 	public String mostraCognomi(Model model){
 		Iterable<Autore> autori = autoreservice.findAll();
 		Set<String> cognomi = new TreeSet<>();
@@ -46,7 +46,7 @@ public class GalleriaController  {
 		return "MostraAutori";
 	}
 	
-	@GetMapping("mostraNazionalita")
+	@GetMapping("/mostraNazionalita")
 	public String mostraNazionalita(Model model){
 		Iterable<Autore> autori = autoreservice.findAll();
 		Set<String> nazionalita = new TreeSet<>();
