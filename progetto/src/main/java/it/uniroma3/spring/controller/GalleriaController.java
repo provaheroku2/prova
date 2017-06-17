@@ -39,7 +39,7 @@ public class GalleriaController  {
 
 	@PostMapping("/ricercaAutoriCognome")
 	public String ricercaAutoriPerCognome(@RequestParam("cognome") String cognome, Model model){
-		List<Autore> autori = autoreservice.fingByCognome(cognome.toUpperCase());
+		List<Autore> autori = autoreservice.fingByCognome((cognome.substring(0,1).toUpperCase() + cognome.substring(1).toLowerCase()));
 		model.addAttribute("autori", autori);
 		return "MostraAutori";
 	}

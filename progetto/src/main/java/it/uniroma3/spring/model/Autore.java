@@ -42,10 +42,10 @@ public class Autore {
 		this.quadri = new ArrayList<>();
 	}
 	
-	public Autore(String nome, String cognome, String nazionalità, Integer nascita, Integer morte){
+	public Autore(String nome, String cognome, String nazionalita, Integer nascita, Integer morte){
 		this.nome = nome;
 		this.cognome = cognome;
-		this.nazionalita = nazionalità;
+		this.nazionalita = nazionalita;
 		this.annoNascita = nascita;
 		this.annoMorte = morte;
 	}
@@ -62,19 +62,20 @@ public class Autore {
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome.toUpperCase();
+		this.nome = (nome.substring(0,1).toUpperCase() + nome.substring(1).toLowerCase());
 	}
+
 	public String getCognome() {
 		return cognome;
 	}
 	public void setCognome(String cognome) {
-		this.cognome = cognome.toUpperCase();
+		this.cognome = (cognome.substring(0,1).toUpperCase() + cognome.substring(1).toLowerCase());;
 	}
 	public String getNazionalita() {
 		return nazionalita;
 	}
-	public void setNazionalita(String nazionalità) {
-		this.nazionalita = nazionalità.toUpperCase();
+	public void setNazionalita(String nazionalita) {
+		this.nazionalita = (nazionalita.substring(0,1).toUpperCase() + nazionalita.substring(1).toLowerCase());;
 	}
 	public Integer getAnnoNascita() {
 		return annoNascita;
