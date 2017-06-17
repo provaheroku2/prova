@@ -61,8 +61,9 @@
 			<td th:text="${autore.annoMorte}"/>
 
 			<td><form action="/eliminaautore" method="get">
-					<input type="hidden" th:value="${autore.id}" name="id" /> <input
-						type="submit" th:value="elimina" name="elimina" />
+					<input type="hidden" th:value="${autore.id}" name="id" />
+					 <input 
+						type="submit"  th:value="elimina" name="elimina" />
 				</form></td>
 
 
