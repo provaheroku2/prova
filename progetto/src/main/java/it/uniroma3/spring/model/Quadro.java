@@ -54,7 +54,7 @@ public class Quadro {
 		return titolo;
 	}
 	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+		this.titolo = titolo.toUpperCase();
 	}
 	public Integer getAnnoRealizzazione() {
 		return annoRealizzazione;
@@ -66,7 +66,7 @@ public class Quadro {
 		return tecnica;
 	}
 	public void setTecnica(String tecnica) {
-		this.tecnica = tecnica;
+		this.tecnica = tecnica.toUpperCase();
 	}
 	public Double getLunghezza() {
 		return lunghezza;

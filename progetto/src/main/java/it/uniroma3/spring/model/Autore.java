@@ -62,19 +62,19 @@ public class Autore {
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome.toUpperCase();
 	}
 	public String getCognome() {
 		return cognome;
 	}
 	public void setCognome(String cognome) {
-		this.cognome = cognome;
+		this.cognome = cognome.toUpperCase();
 	}
 	public String getNazionalita() {
 		return nazionalita;
 	}
 	public void setNazionalita(String nazionalità) {
-		this.nazionalita = nazionalità;
+		this.nazionalita = nazionalità.toUpperCase();
 	}
 	public Integer getAnnoNascita() {
 		return annoNascita;
