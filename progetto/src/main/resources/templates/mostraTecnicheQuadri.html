@@ -3,17 +3,54 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
 <title>Ricerca</title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-	Tecnica:
-	<ul th:each="tecnica : ${tecniche}"> 
-		<li> <a th:href="@{'/ricercaQuadriTecnica?tecnica='+ ${tecnica}}"> 
+
+<body style="background-color:#2F4F4F">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+          <li><a href="/mostraGalleria#section1">Visualizza quadri</a></li>
+                <li><a href="/mostraGalleria#section2">Visualizza autori</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>  
+
+<div class="container">
+  <div style="background-color:black" class="jumbotron">
+    <h1 style="color:orange">Tecnica</h1>      
+    <p style="color:orange">Clicca sulla tecnica di interesse</p>
+ 	</div>
+
+	<ul class="list-group" style="padding-left:65px; padding-right:65px" th:each="tecnica : ${tecniche}">
+		<li class="list-group-item" style="background-color:black">
+		<a th:href="@{'/ricercaQuadriTecnica?tecnica='+ ${tecnica}}" style="color:orange"> 
 			 <span th:text="${tecnica}"></span></a>
-		</li>
-	</ul>
-		
-	<p><a href="/mostraGalleria">Metodi di ricerca</a></p>
+			 
+    </li>
+    </ul>
+ 
+</div>
 </body>
+
+
 </html>
