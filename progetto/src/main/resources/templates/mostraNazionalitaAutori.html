@@ -11,7 +11,7 @@
 </head>
 
 	
-	<body style="background-color:#2F4F4F">
+	<body>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -36,7 +36,7 @@
 </nav>  
 
 	<div class="container">
-  <div style="background-color:black" class="jumbotron">
+  <div style="background-color:#696969" class="jumbotron">
     <h1 style="color:orange">Nazionalità</h1>      
     <p style="color:orange">Clicca sulla nazionalità di interesse</p>
  	</div>
@@ -44,7 +44,7 @@
 	
    <ul class="list-group" style="padding-left:65px; padding-right:65px" 
 	  th:each="nation : ${nazionalita}"> 
-	<li class="list-group-item" style="background-color:black">
+	<li class="list-group-item" style="background-color:#202020">
 	<a th:href="@{'/ricercaAutoriNazionalita?nazionalita='+ ${nation}}" style="color:orange" > 
 			 <span th:text="${nation}"></span></a>
 		</li>
