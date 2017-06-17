@@ -43,7 +43,7 @@ public class GalleriaController  {
 	public String ricercaAutoriPerCognome(@RequestParam("cognome") String cognome, Model model){
 		List<Autore> autori = autoreservice.fingByCognome(cognome);
 		model.addAttribute("autori", autori);
-		return "autoriFiltrati";
+		return "MostraAutori";
 	}
 	
 	@GetMapping("mostraNazionalita")
@@ -62,7 +62,7 @@ public class GalleriaController  {
 	public String ricercaAutoriPerNazionalita(@RequestParam("nazionalita") String nazionalita, Model model){
 		List<Autore> autori = autoreservice.fingByNazionalita(nazionalita);
 		model.addAttribute("autori", autori);
-		return "autoriFiltrati";
+		return "MostraAutori";
 	}
 
 	@GetMapping("/ricercaQuadriAutore")
@@ -70,7 +70,7 @@ public class GalleriaController  {
     		Autore autore = autoreservice.findbyId(id);
 		    List<Quadro> quadri = autore.getQuadri();
     		model.addAttribute("quadri",quadri);
-    		return "quadriFiltrati";
+    		return "MostraQuadri";
    }
 	
 	@GetMapping("/galleriaautori")
@@ -102,7 +102,7 @@ public class GalleriaController  {
     public String ricercaTecnica(@RequestParam("tecnica") String tecnica, Model model){
         List<Quadro> quadri = quadroservice.findByTecnica(tecnica);
         model.addAttribute("quadri",quadri);
-        return "quadriFiltrati";
+        return "MostraQuadri";
     }
 	
 	@GetMapping("/mostraAnni")
@@ -121,7 +121,7 @@ public class GalleriaController  {
     public String ricercaAnno(@RequestParam("anno") Integer anno, Model model){
         List<Quadro> quadri = quadroservice.findByAnnoRealizzazione(anno);
         model.addAttribute("quadri",quadri);
-        return "quadriFiltrati";
+        return "MostraQuadri"; //era quadriFiltrati
     }
 	
 	
