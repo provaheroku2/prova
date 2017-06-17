@@ -1,5 +1,7 @@
 package it.uniroma3.spring.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
-
+import it.uniroma3.spring.model.Autore;
 import it.uniroma3.spring.model.Quadro;
 import it.uniroma3.spring.service.AutoreService;
 import it.uniroma3.spring.service.QuadroService;
@@ -52,10 +52,21 @@ public class QuadroController  {
 	}
 
 	@GetMapping("/quadro")
-	public String showForm(Quadro quadro, Model model) {
-		model.addAttribute("autori",autoreservice.findAll());
-		return "Quadroform";
-	}
+    public String showForm(Quadro quadro, Model model, Autore autore) {
+
+        List<Autore> autori =(List<Autore>)autoreservice.findAll();
+
+        if (autori.size()==0){
+            model.addAttribute("NoAutori","Non ci sono autori nel database, inseriscine uno");
+            return "Autoreform";
+        }
+        else {
+            model.addAttribute("autori", autori);
+            return "Quadroform";
+        }
+
+
+    }
 
 
 	@PostMapping("/quadro")
