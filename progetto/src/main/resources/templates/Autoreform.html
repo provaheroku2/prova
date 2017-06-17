@@ -30,6 +30,7 @@
           <li><a href="/quadro">Inserisci quadro</a></li>
           <li><a href="/gestioneEliminaQuadro">Elimina quadro</a></li>
           <li><a href="/gestioneEliminaAutore">Elimina autore</a></li>
+           <li><a href="/pannelloDiControllo.html">Torna al pannello di controllo</a></li>
        </ul>
        </li>
     </ul>
@@ -37,11 +38,12 @@
 </nav>
         
         
-        <div class="alert alert-danger">
+        <div class="alert alert-danger" th:if="${NoAutori}" >
   		
-       <strong> <span th:if="${NoAutori}" th:text="${NoAutori}" style="color:red">Error</span>
+       <strong> <span th:text="${NoAutori}" style="color:red">Error</span>
         </strong>
        </div>
+       <div class="container">
         <h2>Inserisci un nuovo autore</h2>
         <form action="#" th:action="@{/autore}" th:object="${autore}" method="post">
             <div>
