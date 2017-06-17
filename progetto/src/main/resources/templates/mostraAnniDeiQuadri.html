@@ -35,14 +35,14 @@
 </nav>  
 
 <div class="container" >
-  <div style="background-color:#484848" class="jumbotron">
+  <div style="background-color:#202020" class="jumbotron">
     <h1 style="color:orange">Anno di realizzazione</h1>      
     <p style="color:orange">Clicca sull'anno di interesse</p>
  	</div>
 
 
  	<ul class="list-group" style="padding-left:65px; padding-right:65px" th:each="anno : ${anni}">
- 	<li class="list-group-item" style="background-color:#484848">
+ 	<li class="list-group-item" style="background-color:#202020">
    <a th:href="@{'/ricercaQuadriAnno?anno='+ ${anno}}" style="color:orange"> 
 			 <span th:text="${anno}"></span></a>
 			 
