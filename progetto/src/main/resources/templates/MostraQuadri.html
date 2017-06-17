@@ -49,12 +49,12 @@
 		
 		
 		<tr th:each="quadro : ${quadri}">
-			<td th:text="${quadro.titolo}"/>
-			<td th:text="${quadro.annoRealizzazione}"/>
-			<td th:text="${quadro.tecnica}"/>
-			<td th:text="${quadro.lunghezza}"/>
-			<td th:text="${quadro.altezza}"/>
-			<td th:text="${quadro.autore.cognome}"/>
+			<td th:text="${quadro.titolo}" style="font-weight:bold"/> 
+			<td th:text="${quadro.annoRealizzazione}" style="font-weight:bold"/> 
+			<td th:text="${quadro.tecnica}" style="font-weight:bold"/> 
+			<td th:text="${quadro.lunghezza}" style="font-weight:bold"/> 
+			<td th:text="${quadro.altezza}" style="font-weight:bold"/> 
+			<td th:text="${quadro.autore.cognome}" style="font-weight:bold"/> 
 		</tr>
 	 </tbody>
 	</table>

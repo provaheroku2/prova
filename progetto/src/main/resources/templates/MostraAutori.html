@@ -51,11 +51,11 @@
 
 	
 		<tr th:each="autore : ${autori}">
-			<td th:text="${autore.cognome}"/>
-			<td th:text="${autore.nome}"/>
-			<td th:text="${autore.nazionalita}"/>
-			<td th:text="${autore.annoNascita}"/>
-			<td th:text="${autore.annoMorte}"/>
+			<td th:text="${autore.cognome}" style="font-weight:bold"/> 
+			<td th:text="${autore.nome}" style="font-weight:bold" />
+			<td th:text="${autore.nazionalita}" style="font-weight:bold"/>
+			<td th:text="${autore.annoNascita}" style="font-weight:bold"/>
+			<td th:text="${autore.annoMorte}" style="font-weight:bold"/>
 
 		</tr>
 	  </tbody>
