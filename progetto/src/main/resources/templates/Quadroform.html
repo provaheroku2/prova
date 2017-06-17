@@ -49,7 +49,7 @@
 			<div class="form-group">
 				<span th:text="#{label.titolo}"> Titolo: </span> <span><input
 					type="text" class="form-control" placeholder="titolo" th:field="*{titolo}" /></span> <span
-					th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
+					th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}" style="color:red" >Error</span>
 			</div>
 			
 			<div class="form-group">
@@ -60,7 +60,7 @@
 				</span> 
 					<span
 					th:if="${#fields.hasErrors('annoRealizzazione')}"
-					th:text="#{label.erroreAnno}">Error</span>
+					th:text="#{label.erroreAnno}" style="color:red">Error</span>
 			</div>
 			
 			<div class="form-group">
@@ -68,21 +68,21 @@
 					type="text" th:field="*{tecnica}" 
 					class="form-control" placeholder="tecnica" /></span> <span
 					th:if="${#fields.hasErrors('tecnica')}"
-					th:text="#{label.mandatory}">Error</span>
+					th:text="#{label.mandatory}" style="color:red">Error</span>
 			</div>
 			
 			<div class="form-group">
 				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
 					type="text" th:field="*{lunghezza}"
 					class="form-control" placeholder="lunghezza" /></span> <span
-					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.number}">Error</span>
+					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.number}" style="color:red">Error</span>
 			</div>
 			
 			<div class="form-group">
 				<span th:text="#{label.altezza}">Altezza: </span> <span><input
 					type="text" th:field="*{altezza}" 
 					class="form-control" placeholder="altezza" /></span> <span
-					th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}">Error</span>
+					th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}" style="color:red">Error</span>
 			</div>
 			
 			<div class="form-group">

@@ -63,6 +63,7 @@ public class QuadroController  {
 			BindingResult bindingResult, Model model, @RequestParam("autoreId") Long id ) {
 
 		if (bindingResult.hasErrors()) {
+			model.addAttribute("autori",autoreservice.findAll());
 			return "Quadroform";
 		}
 		else {
