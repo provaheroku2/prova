@@ -30,7 +30,6 @@ public class Quadro {
 	@NotNull
 	@Min(0)
 	private Double altezza;
-	
 	private String immagine;
 	@ManyToOne
 	private Autore autore;
