@@ -59,7 +59,7 @@
    
     	<li class="list-group-item"> Autore:
 			<a th:href="@{'/ricercaAutoreId?autoreId='+ ${quadro.autore.id}}"> 
-			<span th:text="${quadro.autore.cognome} +' '+ ${quadro.autore.nome}" ></span></a>
+			<span th:text="${quadro.autore.nome} +' '+ ${quadro.autore.cognome}" ></span></a>
 		</li>
 	</ul>	
 	<a type="button" class="btn btn-default" href="/quadro">Crea nuovo quadro</a>

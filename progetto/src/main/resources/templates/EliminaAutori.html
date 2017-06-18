@@ -41,8 +41,8 @@
 	<table>
 		 <thead>
    			 <tr>
-    	    	 <th>Cognome</th>
-      			 <th>Nome</th>
+    	    	 <th>Nome</th>
+      			 <th>Cognome</th>
       		 	 <th>Nazionalità</th>
 	  			 <th>Anno di nascita</th>
 	  			 <th>Anno di morte</th>
@@ -55,8 +55,8 @@
 	
 	
 	<tr th:each="autore : ${autori}">
-			<td th:text="${autore.cognome}"/>
 			<td th:text="${autore.nome}"/>
+			<td th:text="${autore.cognome}"/>
 			<td th:text="${autore.nazionalita}"/>
 			<td th:text="${autore.annoNascita}"/>
 			<td th:text="${autore.annoMorte}"/>
