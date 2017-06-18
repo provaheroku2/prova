@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Quadro {
@@ -13,21 +16,29 @@ public class Quadro {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	@NotNull
+	@Size(min=1)
 	private String titolo;
+	@NotNull
+	@Max(2017)
 	private Integer annoRealizzazione;
+	@NotNull
+	@Size(min=1)
 	private String tecnica;
+	@NotNull
+	@Min(0)
 	private Double lunghezza;
+	@NotNull
+	@Min(0)
 	private Double altezza;
 	@ManyToOne
 	private Autore autore;
 	
 	protected Quadro(){
-		
 	}
 	
-	public Quadro(String titolo, Integer anno, String tecnica, Double lunghezza, Double altezza){
+	public Quadro(String titolo, Integer annoRealizzazione, String tecnica, Double lunghezza, Double altezza){
 		this.titolo = titolo;
-		this.annoRealizzazione = anno;
+		this.annoRealizzazione = annoRealizzazione;
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.altezza = altezza;
@@ -43,19 +54,19 @@ public class Quadro {
 		return titolo;
 	}
 	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+		this.titolo = (titolo.substring(0,1).toUpperCase() + titolo.substring(1).toLowerCase());;
 	}
-	public Integer getAnno() {
+	public Integer getAnnoRealizzazione() {
 		return annoRealizzazione;
 	}
-	public void setAnno(Integer anno) {
+	public void setAnnoRealizzazione(Integer anno) {
 		this.annoRealizzazione = anno;
 	}
 	public String getTecnica() {
 		return tecnica;
 	}
 	public void setTecnica(String tecnica) {
-		this.tecnica = tecnica;
+		this.tecnica = (tecnica.substring(0,1).toUpperCase() + tecnica.substring(1).toLowerCase());;
 	}
 	public Double getLunghezza() {
 		return lunghezza;

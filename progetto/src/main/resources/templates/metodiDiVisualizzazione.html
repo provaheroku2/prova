@@ -1,0 +1,111 @@
+ <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Galleria d'arte</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+          <li><a href="#section1">Visualizza quadri</a></li>
+          <li><a href="#section2">Visualizza autori</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div id="section1" class="container-fluid">
+  <h1 style="color:grey">Seleziona il metodo di visualizzazione dei quadri</h1>
+  <p><a href="/galleriaquadri" style="color:orange; font-size:20px">Visualizza tutti i quadri nella galleria</a></p>
+  <p><a href="/mostraAnni" style="color:orange; font-size:20px">ricerca per anno </a></p>
+  <p><a href="/mostraTecniche" style="color:orange; font-size:20px">ricerca per tecnica </a></p>
+  <p><a href="/mostraAutori" style="color:orange; font-size:20px">ricerca per autore </a></p>
+</div>
+<div id="section2" class="container-fluid">
+  <h1 style="color:grey">Seleziona il metodo di visualizzazione degli autori</h1>
+  <p><a href="/galleriaautori" style="color:orange; font-size:20px">Visualizza tutti gli autori nella galleria</a></p>
+  <p><a href="/mostraNazionalita" style="color:orange; font-size:20px">ricerca per nazionalità </a></p>
+  
+  
+  <!-- Ricerca per cognome-->
+  <a href="#ricercaCognome"  data-toggle="modal" data-target="#ricercaCognome" style="color:orange; font-size:20px">ricerca per cognome</a>
+    <!-- Modal -->
+  <div class="modal fade" id="ricercaCognome" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color:black">Ricerca</h4>
+        </div>
+        <div class="modal-body" style="color:black">
+          <p>Scrivi il cognome da cercare</p>
+          
+          <form action="#" th:action="@{/ricercaAutoriCognome}"
+		method="post">
+         <div class="form-group">
+				<span th:text="#{label.cognome}">Cognome: </span> <span><input
+					type="text" id="cognome" name="cognome" class="form-control" placeholder="cognome" /></span> 
+			</div>
+			<div>
+				<button type="submit" class="btn btn-default">Cerca</button>
+			</div>
+			</form>
+			
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+	
+</div>
+<footer style="background-color: rgb(0, 0, 0);opacity: 0.7; filter:alpha(opacity=50);padding-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 style="padding-left: 350px; color:white">Progetto Sistemi informativi sul web</h3>
+                <small class="mbr-section-subtitle" style="padding-left: 422px; color:white">By Martinelli Alessandro &amp; Zaccaria Nicolas</small>
+            </div>
+        </div>
+    </div>
+</footer>	
+</body>
+
+ <style>
+  body {
+      position: relative; 
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: black}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: white;}
+  
+  footer {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+}
+  </style>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuovo Autore</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+    <body>
+        
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      </ul>
+      
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menù <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/quadro">Inserisci quadro</a></li>
+          <li><a href="/gestioneEliminaQuadro">Elimina quadro</a></li>
+          <li><a href="/gestioneEliminaAutore">Elimina autore</a></li>
+           <li><a href="/pannelloDiControllo.html">Torna al pannello di controllo</a></li>
+       </ul>
+       </li>
+    </ul>
+  </div>
+</nav>
+        
+        
+        <div class="alert alert-danger" th:if="${NoAutori}" >
+  		
+       <strong> <span th:text="${NoAutori}" style="color:red">Error</span>
+        </strong>
+       </div>
+       <div class="container">
+        <h2>Inserisci un nuovo autore</h2>
+        <form action="#" th:action="@{/autore}" th:object="${autore}" method="post">
+            <div>
+               	<div class="form-group">
+                    <span th:text="#{label.nome}">Nome: </span>
+                    <span><input type="text" class="form-control" placeholder="nome" th:field="*{nome}" /></span>
+                    <span th:if="${#fields.hasErrors('nome')}" th:text="#{label.mandatory}" style="color:red">Error</span>
+                </div>
+                <div class="form-group">
+                    <span th:text="#{label.cognome}">Cognome: </span>
+                    <span><input type="text" class="form-control" placeholder="cognome" th:field="*{cognome}" /></span>
+                    <span th:if="${#fields.hasErrors('cognome')}" th:text="#{label.mandatory}" style="color:red">Error</span>
+                </div>
+                <div class="form-group">
+                    <span th:text="#{label.nazionalita}">Nazionalita: </span>
+                    <span><input type="text" class="form-control" placeholder="nazionalita'" th:field="*{nazionalita}" /></span>
+                    <span th:if="${#fields.hasErrors('nazionalita')}" th:text="#{label.mandatory}" style="color:red">Error</span>
+                </div>
+                <div class="form-group">
+                    <span th:text="#{label.annoNascita}">Anno di nascita: </span>
+                    <span><input type="text" class="form-control" placeholder="anno di nascita" th:field="*{annoNascita}" /></span>
+                    <span th:if="${#fields.hasErrors('annoNascita')}" th:text="#{label.erroreAnno}" style="color:red">Error</span>
+                </div>
+                <div class="form-group">
+                    <span th:text="#{label.annoMorte}">Anno di morte: </span>
+                    <span><input type="text" class="form-control" placeholder="anno di morte" th:field="*{annoMorte}" /></span>
+                    <span th:if="${#fields.hasErrors('annoMorte')}" th:text="#{label.erroreAnno}" style="color:red">Error</span>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+                
+            </div>
+        </form>   
+        </div>
+
+    </body>
+   
+</html>

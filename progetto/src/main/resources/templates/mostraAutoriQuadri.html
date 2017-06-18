@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+          <li><a href="/mostraGalleria#section1">Visualizza quadri</a></li>
+                <li><a href="/mostraGalleria#section2">Visualizza autori</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>  
+
+	<div class="container">
+  <div style="background-color:#696969" class="jumbotron">
+    <h1 style="color:orange">Autore</h1>      
+    <p style="color:orange">Clicca sull'autore di interesse</p>
+ 	</div>
+	
+	<ul class="list-group" style="padding-left:65px; padding-right:65px" 
+	  th:each="autore : ${autori}"> 
+	<li class="list-group-item" style="background-color:#202020">
+	<a th:href="@{'/ricercaQuadriAutore?autoreId='+ ${autore.id}}" style="color:orange">  
+			 <span th:text="${autore.cognome}"></span></a>
+		</li>
+	</ul>
+	</div>
+<footer style="background-color: rgb(0, 0, 0);opacity: 0.7; filter:alpha(opacity=50);padding-bottom:20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 style="padding-left: 350px; color:white">Progetto Sistemi informativi sul web</h3>
+                <small class="mbr-section-subtitle" style="padding-left: 422px; color:white">By Martinelli Alessandro &amp; Zaccaria Nicolas</small>
+            </div>
+        </div>
+    </div>
+</footer>		
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Nuovo quadro</title>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="navbar-brand" style="color:orange">GalleriaRomaTre</div>
+    </div>
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      </ul>
+      
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menù <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/autore">Inserisci autore</a></li>
+          <li><a href="/gestioneEliminaQuadro">Elimina quadro</a></li>
+          <li><a href="/gestioneEliminaAutore">Elimina autore</a></li>
+          <li><a href="/pannelloDiControllo.html">Torna al pannello di controllo</a></li>
+       </ul>
+       </li>
+    </ul>
+  </div>
+</nav>
+	
+	
+	
+	
+	
+	<div class="container">
+        <h2>Inserisci un nuovo quadro</h2>
+	
+	<form action="#" th:action="@{/quadro}" th:object="${quadro}"
+		method="post">
+		<div>
+			<div class="form-group">
+				<span th:text="#{label.titolo}"> Titolo: </span> <span><input
+					type="text" class="form-control" placeholder="titolo" th:field="*{titolo}" /></span> <span
+					th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}" style="color:red" >Error</span>
+			</div>
+			
+			<div class="form-group">
+				<span th:text="#{label.annoRealizzazione}">Anno di
+					realizzazione: </span> <span><input type="text"
+					th:field="*{annoRealizzazione}"
+					class="form-control" placeholder="anno di realizzazione" />
+				</span> 
+					<span
+					th:if="${#fields.hasErrors('annoRealizzazione')}"
+					th:text="#{label.erroreAnno}" style="color:red">Error</span>
+			</div>
+			
+			<div class="form-group">
+				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
+					type="text" th:field="*{tecnica}" 
+					class="form-control" placeholder="tecnica" /></span> <span
+					th:if="${#fields.hasErrors('tecnica')}"
+					th:text="#{label.mandatory}" style="color:red">Error</span>
+			</div>
+			
+			<div class="form-group">
+				<span th:text="#{label.lunghezza}">Lunghezza: </span> <span><input
+					type="text" th:field="*{lunghezza}"
+					class="form-control" placeholder="lunghezza" /></span> <span
+					th:if="${#fields.hasErrors('lunghezza')}" th:text="#{label.number}" style="color:red">Error</span>
+			</div>
+			
+			<div class="form-group">
+				<span th:text="#{label.altezza}">Altezza: </span> <span><input
+					type="text" th:field="*{altezza}" 
+					class="form-control" placeholder="altezza" /></span> <span
+					th:if="${#fields.hasErrors('altezza')}" th:text="#{label.number}" style="color:red">Error</span>
+			</div>
+			
+			<div class="form-group">
+      			<label for="sel1">Seleziona autore (select one):</label>
+      			<select class="form-control" name = "autoreId">
+	
+				<option th:each="autore : ${autori}" 
+						th:value="${autore.id}"
+						th:text="${autore.cognome} +' '+ ${autore.nome} "/>
+				</select>
+			</div>
+			
+			<div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+	
+			
+		
+		</div>
+	</form>
+	
+	</div>
+	
+</body>
+
+</html>

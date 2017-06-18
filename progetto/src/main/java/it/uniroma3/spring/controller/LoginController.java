@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 // controller to access the login page
 @Controller
-public class MainController {
+public class LoginController {
 
   // Login form
   @RequestMapping("/login")
