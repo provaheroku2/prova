@@ -58,7 +58,7 @@
 
    
     	<li class="list-group-item"> Autore:
-			<a th:href="@{'/galleriaAutore?id='+ ${quadro.autore.id}}"> 
+			<a th:href="@{'/ricercaAutoreId?autoreId='+ ${quadro.autore.id}}"> 
 			<span th:text="${quadro.autore.cognome} +' '+ ${quadro.autore.nome}" ></span></a>
 		</li>
 	</ul>	
