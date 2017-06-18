@@ -49,7 +49,10 @@
 		
 		
 		<tr th:each="quadro : ${quadri}">
-			<td th:text="${quadro.titolo}" style="font-weight:bold"/> 
+			<td>
+			<a th:href="${quadro.immagine}" th:text="${quadro.titolo}" style="font-weight:bold;color:orange"> 
+			</a>
+			</td>
 			<td th:text="${quadro.annoRealizzazione}" style="font-weight:bold"/> 
 			<td th:text="${quadro.tecnica}" style="font-weight:bold"/> 
 			<td th:text="${quadro.lunghezza}" style="font-weight:bold"/> 
