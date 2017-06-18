@@ -34,6 +34,9 @@ public class Autore {
 	@NotNull
 	@Max(2017)
 	private Integer annoMorte; 
+	
+	/*Da un'analisi dei casi d'uso noto che quando elimino un autore è sempre necessario
+    eliminare i quadri associati ad esso*/
 	@OneToMany(mappedBy="autore", cascade = CascadeType.REMOVE)
 	private List<Quadro> quadri;
 
