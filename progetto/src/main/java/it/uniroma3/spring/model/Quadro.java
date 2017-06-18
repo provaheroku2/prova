@@ -30,18 +30,21 @@ public class Quadro {
 	@NotNull
 	@Min(0)
 	private Double altezza;
+	
+	private String immagine;
 	@ManyToOne
 	private Autore autore;
 	
 	protected Quadro(){
 	}
 	
-	public Quadro(String titolo, Integer annoRealizzazione, String tecnica, Double lunghezza, Double altezza){
+	public Quadro(String titolo, Integer annoRealizzazione, String tecnica, Double lunghezza, Double altezza, String immagine){
 		this.titolo = titolo;
 		this.annoRealizzazione = annoRealizzazione;
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.altezza = altezza;
+		this.immagine = immagine;
 	}
 	
 	public Long getId() {
@@ -85,5 +88,15 @@ public class Quadro {
 	}
 	public void setAutore(Autore autore) {
 		this.autore = autore;
+	}
+	
+	public String getImmagine(){
+		return this.immagine;
+	}
+	public void setImmagine(String immagine){
+		if(immagine.substring(0, 6).equals("http://"))
+		this.immagine = immagine;
+		else
+			this.immagine = ("http://").concat(immagine);
 	}
 }

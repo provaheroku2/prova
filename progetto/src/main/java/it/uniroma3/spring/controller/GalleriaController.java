@@ -31,7 +31,7 @@ public class GalleriaController  {
 
 	@RequestMapping("/mostraGalleria")
 	public String mostraGalleria(){
-		return "/metodiDiVisualizzazione";
+		return "metodiDiVisualizzazione";
 	}
 
 	@GetMapping("/ricercaAutoreId")
