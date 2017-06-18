@@ -94,6 +94,9 @@ public class Quadro {
 		return this.immagine;
 	}
 	public void setImmagine(String immagine){
+		if(immagine.substring(0, 6).equals("http://"))
 		this.immagine = immagine;
+		else
+			this.immagine = ("http://").concat(immagine);
 	}
 }
