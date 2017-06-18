@@ -44,6 +44,7 @@ public class Quadro {
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.altezza = altezza;
+		if(this.verificaURL(immagine))
 		this.immagine = immagine;
 	}
 	
@@ -94,9 +95,16 @@ public class Quadro {
 		return this.immagine;
 	}
 	public void setImmagine(String immagine){
-		if(immagine.substring(0, 6).equals("http://"))
-		this.immagine = immagine;
-		else
-			this.immagine = ("http://").concat(immagine);
+		if(verificaURL(immagine))
+			this.immagine = immagine;
+	}
+
+	public boolean verificaURL(String immagine){
+		if(immagine.length() < 9)
+			return false;
+		else if(immagine.substring(0, 7).equals("http://") ||immagine.substring(0, 8).equals("https://") )
+			return true;
+		else 
+			return false;
 	}
 }
