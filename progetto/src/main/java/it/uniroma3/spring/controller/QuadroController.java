@@ -20,6 +20,7 @@ import it.uniroma3.spring.model.Autore;
 import it.uniroma3.spring.model.Quadro;
 import it.uniroma3.spring.service.AutoreService;
 import it.uniroma3.spring.service.QuadroService;
+import it.uniroma3.spring.validator.quadroValidator;
 
 
 @Controller
