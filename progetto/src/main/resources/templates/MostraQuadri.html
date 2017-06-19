@@ -50,7 +50,7 @@
 		
 		<tr th:each="quadro : ${quadri}">
 			<td>
-			<a th:href="${quadro.immagine}" th:text="${quadro.titolo}" style="font-weight:bold;color:orange"> 
+			<a th:href="${quadro.immagine}" th:text="${quadro.titolo}" style="font-weight:bold;color:darkorange"> 
 			</a>
 			</td>
 			<td th:text="${quadro.annoRealizzazione}" style="font-weight:bold"/> 
@@ -58,7 +58,7 @@
 			<td th:text="${quadro.lunghezza}" style="font-weight:bold"/> 
 			<td th:text="${quadro.altezza}" style="font-weight:bold"/> 
 			<td>
-			<a th:href="@{'/ricercaAutoreId?autoreId='+ ${quadro.autore.id}}" style="color:orange">
+			<a th:href="@{'/ricercaAutoreId?autoreId='+ ${quadro.autore.id}}" style="color:darkorange">
 			<span th:text="${quadro.autore.nome} +' '+ ${quadro.autore.cognome}" style="font-weight:bold"></span>
 			</a>
 			</td>
