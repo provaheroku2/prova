@@ -36,13 +36,6 @@ public class AutoreController {
 		return "GestioneAutori";
 	}
 	
-	@RequestMapping(value="/modificaautore", method = RequestMethod.GET)
-	public String modificaQuadro(@RequestParam("id") Long id, Model model) {
-		Autore autore= autoreservice.findbyId(id);
-		model.addAttribute("autore",autore);
-		autoreservice.elimina(autore);
-		return "Autoreform";
-	}
 	
 	@RequestMapping(value="/mostraAutore", method=RequestMethod.GET)
 	public String dettagliQuadro(@RequestParam("id") Long id ,Model model){

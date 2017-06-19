@@ -47,7 +47,7 @@
 	  			 <th>Anno di nascita</th>
 	  			 <th>Anno di morte</th>
 	  			 <th>Elimina</th>
-	  			 <th>Modifica</th>
+	  			
 	  			 
 	  			 
 	  			 
@@ -68,11 +68,7 @@
 					 <input 
 						type="submit"  th:value="elimina" name="elimina" />
 				</form></td>
-				<td><form action="/modificaautore" method="get">
-					<input type="hidden" th:value="${autore.id}" name="id" />
-					 <input 
-						type="submit"  th:value="modifica" name="modifica" />
-				</form></td>
+				
 
 
 		 </tr>
