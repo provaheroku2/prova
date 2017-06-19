@@ -31,7 +31,7 @@
         <ul class="dropdown-menu">
           <li><a href="/quadro">Inserisci quadro</a></li>
           <li><a href="/autore">Inserisci autore</a></li>
-          <li><a href="/gestioneEliminaAutore">Elimina autore</a></li>
+          <li><a href="/gestioneAutori">Elimina o modifica autore</a></li>
           <li><a href="/pannelloDiControllo.html">Torna al pannello di controllo</a></li>
        </ul>
        </li>
@@ -51,6 +51,7 @@
 	  			 <th>Altezza</th>
 	  			 <th>Autore</th>
 	  			 <th>Elimina</th>
+	  			 <th>Modifica</th>
     			 </tr>
   		</thead>
  		 <tbody>
@@ -68,6 +69,10 @@
 			<td><form action="/eliminaquadro" method="get">
 					<input type="hidden" th:value="${quadro.id}" name="id" /> <input
 						type="submit" th:value="elimina" name="elimina" />
+				</form></td>
+					<td><form action="/modificaquadro" method="get">
+					<input type="hidden" th:value="${quadro.id}" name="id" /> <input
+						type="submit" th:value="modifica" name="modifica" />
 				</form></td>
 
 

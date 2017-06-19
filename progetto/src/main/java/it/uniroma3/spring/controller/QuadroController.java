@@ -31,10 +31,10 @@ public class QuadroController  {
 	private AutoreService autoreservice;
 
 
-	@GetMapping("/gestioneEliminaQuadro")
+	@GetMapping("/gestioneQuadri")
 	public String mostraQuadri(Model model) {
 		model.addAttribute("quadri",quadroservice.findAll());
-		return "EliminaQuadri";
+		return "GestioneQuadri";
 	}
 
 	@RequestMapping(value="/eliminaquadro", method = RequestMethod.GET)
@@ -42,7 +42,16 @@ public class QuadroController  {
 		Quadro quadro= quadroservice.findbyId(id);
 		quadroservice.elimina(quadro);
 		model.addAttribute("quadri",quadroservice.findAll());
-		return "EliminaQuadri";
+		return "GestioneQuadri";
+	}
+	
+	@RequestMapping(value="/modificaquadro", method = RequestMethod.GET)
+	public String modificaQuadro(@RequestParam("id") Long id, Model model) {
+		Quadro quadro= quadroservice.findbyId(id);
+		model.addAttribute("quadro",quadro);
+		model.addAttribute("autori", autoreservice.findAll());
+		quadroservice.elimina(quadro);
+		return "Quadroform";
 	}
 
 	@RequestMapping(value="/mostraQuadro", method=RequestMethod.GET)

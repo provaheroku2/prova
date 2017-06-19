@@ -27,13 +27,21 @@ public class AutoreController {
 		Autore autore= autoreservice.findbyId(id);
 		autoreservice.elimina(autore);
 		model.addAttribute("autori",autoreservice.findAll());
-		return "EliminaAutori";
+		return "GestioneAutori";
 	}
 	
-	@GetMapping("/gestioneEliminaAutore")
+	@GetMapping("/gestioneAutori")
 	public String mostraAutori(Model model) {
 		model.addAttribute("autori",autoreservice.findAll());
-		return "EliminaAutori";
+		return "GestioneAutori";
+	}
+	
+	@RequestMapping(value="/modificaautore", method = RequestMethod.GET)
+	public String modificaQuadro(@RequestParam("id") Long id, Model model) {
+		Autore autore= autoreservice.findbyId(id);
+		model.addAttribute("autore",autore);
+		autoreservice.elimina(autore);
+		return "Autoreform";
 	}
 	
 	@RequestMapping(value="/mostraAutore", method=RequestMethod.GET)
