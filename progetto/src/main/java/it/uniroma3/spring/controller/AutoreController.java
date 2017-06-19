@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.uniroma3.spring.model.Autore;
 import it.uniroma3.spring.service.AutoreService;
+import it.uniroma3.spring.validator.autoreValidator;
 
 @Controller
 public class AutoreController {
@@ -51,14 +52,18 @@ public class AutoreController {
 	    @PostMapping("/autore")
 	    public String checkQuadroInfo(@Valid @ModelAttribute Autore autore, 
 	    									BindingResult bindingResult, Model model) {
-	    	
+	       
+	    	String nextPage = "resultAutore";
 	        if (bindingResult.hasErrors()) {
-	            return "Autoreform";
+	            nextPage = "Autoreform";
 	        }
-	        else {
+	        else{
 	        	model.addAttribute(autore);
-	            autoreservice.add(autore); 
+	        	if(autoreValidator.validate(autore, model))
+                autoreservice.add(autore); 
+	        	else
+	        		nextPage = "Autoreform";
 	        }
-	        return "resultAutore";
+	      return nextPage;
 	    }
 }
