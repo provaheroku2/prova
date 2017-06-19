@@ -30,8 +30,8 @@
         <ul class="dropdown-menu">
           <li><a href="/quadro">Inserisci quadro</a></li>
           <li><a href="/autore">Inserisci autore</a></li>
-          <li><a href="/gestioneEliminaQuadro">Elimina quadro</a></li>
-          <li><a href="/gestioneEliminaAutore">Elimina autore</a></li>
+          <li><a href="/gestioneQuadri">Elimina o modifica quadro</a></li>
+          <li><a href="/gestioneAutori">Elimina o modifica autore</a></li>
           <li><a href="/pannelloDiControllo.html">Torna al pannello di controllo</a></li>
        </ul>
        </li>
@@ -58,8 +58,8 @@
 
    
     	<li class="list-group-item"> Autore:
-			<a th:href="@{'/galleriaAutore?id='+ ${quadro.autore.id}}"> 
-			<span th:text="${quadro.autore.cognome} +' '+ ${quadro.autore.nome}" ></span></a>
+			<a th:href="@{'/ricercaAutoreId?autoreId='+ ${quadro.autore.id}}"> 
+			<span th:text="${quadro.autore.nome} +' '+ ${quadro.autore.cognome}" ></span></a>
 		</li>
 	</ul>	
 	<a type="button" class="btn btn-default" href="/quadro">Crea nuovo quadro</a>

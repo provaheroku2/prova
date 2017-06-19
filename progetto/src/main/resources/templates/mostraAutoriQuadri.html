@@ -43,7 +43,7 @@
 	  th:each="autore : ${autori}"> 
 	<li class="list-group-item" style="background-color:#202020">
 	<a th:href="@{'/ricercaQuadriAutore?autoreId='+ ${autore.id}}" style="color:orange">  
-			 <span th:text="${autore.cognome}"></span></a>
+			 <span th:text="${autore.nome} +' '+ ${autore.cognome}"></span></a>
 		</li>
 	</ul>
 	</div>

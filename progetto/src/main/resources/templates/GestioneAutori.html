@@ -1,8 +1,7 @@
-<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Quadri</title>
-  <meta charset="utf-8"/>
+<title>Autori</title>
+<meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,7 +30,7 @@
         <ul class="dropdown-menu">
           <li><a href="/quadro">Inserisci quadro</a></li>
           <li><a href="/autore">Inserisci autore</a></li>
-          <li><a href="/gestioneEliminaAutore">Elimina autore</a></li>
+          <li><a href="/gestioneQuadri">Elimina o modifica quadro</a></li>
           <li><a href="/pannelloDiControllo.html">Torna al pannello di controllo</a></li>
        </ul>
        </li>
@@ -39,44 +38,48 @@
   </div>
 </nav>
 	
-	
-	
 	<table>
 		 <thead>
    			 <tr>
-    	    	 <th>Titolo</th>
-      			 <th>Anno di realizzazione</th>
-      		 	 <th>Tecnica</th>
-	  			 <th>Lunghezza</th>
-	  			 <th>Altezza</th>
-	  			 <th>Autore</th>
+    	    	 <th>Nome</th>
+      			 <th>Cognome</th>
+      		 	 <th>Nazionalità</th>
+	  			 <th>Anno di nascita</th>
+	  			 <th>Anno di morte</th>
 	  			 <th>Elimina</th>
+	  			 <th>Modifica</th>
+	  			 
+	  			 
+	  			 
     			 </tr>
   		</thead>
  		 <tbody>
-		 <tr th:each="quadro : ${quadri}">
-			<td th:text="${quadro.titolo}"/>
-			<td th:text="${quadro.annoRealizzazione}"/>
-			<td th:text="${quadro.tecnica}"/>
-			<td th:text="${quadro.lunghezza}"/>
-			<td th:text="${quadro.altezza}"/>
-			<td th:text="${quadro.autore.cognome}"/>
-	       
-			
-			
+	
+	
+	<tr th:each="autore : ${autori}">
+			<td th:text="${autore.nome}"/>
+			<td th:text="${autore.cognome}"/>
+			<td th:text="${autore.nazionalita}"/>
+			<td th:text="${autore.annoNascita}"/>
+			<td th:text="${autore.annoMorte}"/>
 
-			<td><form action="/eliminaquadro" method="get">
-					<input type="hidden" th:value="${quadro.id}" name="id" /> <input
-						type="submit" th:value="elimina" name="elimina" />
+			<td><form action="/eliminaautore" method="get">
+					<input type="hidden" th:value="${autore.id}" name="id" />
+					 <input 
+						type="submit"  th:value="elimina" name="elimina" />
+				</form></td>
+				<td><form action="/modificaautore" method="get">
+					<input type="hidden" th:value="${autore.id}" name="id" />
+					 <input 
+						type="submit"  th:value="modifica" name="modifica" />
 				</form></td>
 
 
-		</tr>
-	 </tbody>
+		 </tr>
+	  </tbody>
 	</table>
 	
 </body>
-
 
 
 <style>
@@ -188,5 +191,6 @@
 
 </style>
 
-</html>
 
+
+</html>
