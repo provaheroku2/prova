@@ -21,4 +21,15 @@ public class LoginController {
     return "login";
   }
 
+  	@RequestMapping(value="/logout", method = RequestMethod.GET)
+	  public String logoutPage (Model model, HttpServletRequest request, HttpServletResponse response) {
+	      Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	      if (auth != null){
+	          model.addAttribute("logout", true);
+	          new SecurityContextLogoutHandler().logout(request, response, auth);
+
+	      }
+	      return "login";
+	  
+	}
 }
