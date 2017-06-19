@@ -49,7 +49,8 @@
 		
 		
 		<tr th:each="quadro : ${quadri}">
-			<td>
+		  	<td  th:if="!${quadro.immagine}" th:text="${quadro.titolo}" style="font-weight:bold"/> 
+  		 	<td  th:if="${quadro.immagine}">
 			<a th:href="${quadro.immagine}" th:text="${quadro.titolo}" style="font-weight:bold;color:darkorange"> 
 			</a>
 			</td>
