@@ -46,14 +46,7 @@ public class QuadroController  {
 		return "GestioneQuadri";
 	}
 	
-	@RequestMapping(value="/modificaquadro", method = RequestMethod.GET)
-	public String modificaQuadro(@RequestParam("id") Long id, Model model) {
-		Quadro quadro= quadroservice.findbyId(id);
-		model.addAttribute("quadro",quadro);
-		model.addAttribute("autori", autoreservice.findAll());
-		quadroservice.elimina(quadro);
-		return "Quadroform";
-	}
+
 
 	@RequestMapping(value="/mostraQuadro", method=RequestMethod.GET)
 	public String dettagliQuadro(@RequestParam("id") Long id ,Model model){
