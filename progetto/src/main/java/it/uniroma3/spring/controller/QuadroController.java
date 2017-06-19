@@ -89,9 +89,15 @@ public class QuadroController  {
 		else {
 			model.addAttribute(quadro);
 			quadro.setAutore(autoreservice.findbyId(id));
-			quadroservice.add(quadro); 
-		}
-		return "resultQuadro";
+			if(quadroValidator.validate(quadro,model)){
+				quadroservice.add(quadro);
+				return "resultQuadro";
+			}
+			else{
+				model.addAttribute("autori",autoreservice.findAll());
+				return "Quadroform";}
+			
+	}
 	}
 
 
