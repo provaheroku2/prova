@@ -51,7 +51,6 @@
 	  			 <th>Altezza</th>
 	  			 <th>Autore</th>
 	  			 <th>Elimina</th>
-	  			 <th>Modifica</th>
     			 </tr>
   		</thead>
  		 <tbody>
@@ -70,10 +69,7 @@
 					<input type="hidden" th:value="${quadro.id}" name="id" /> <input
 						type="submit" th:value="elimina" name="elimina" />
 				</form></td>
-					<td><form action="/modificaquadro" method="get">
-					<input type="hidden" th:value="${quadro.id}" name="id" /> <input
-						type="submit" th:value="modifica" name="modifica" />
-				</form></td>
+					
 
 
 		</tr>
